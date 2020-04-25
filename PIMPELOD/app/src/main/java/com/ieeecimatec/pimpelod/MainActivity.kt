@@ -1,7 +1,8 @@
-topackage com.ieeecimatec.pimpelod
+package com.ieeecimatec.pimpelod
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
