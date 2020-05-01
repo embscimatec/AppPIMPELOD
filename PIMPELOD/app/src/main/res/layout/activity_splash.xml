@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:src="@drawable/logo"
-        android:srcCompat="@android:drawable/sym_def_app_icon" />
+        app:srcCompat="@android:drawable/sym_def_app_icon"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
