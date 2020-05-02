@@ -1,0 +1,81 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.ieeecimatec.pim2pelod2"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:5:5-32:19
+12        android:allowBackup="true"
+12-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.2.0] C:\Users\ferna\.gradle\caches\transforms-2\files-2.1\a3eef63a1949ce565e26a68908e433ce\core-1.2.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:11:9-40
+21        <activity
+21-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:13:9-20:20
+22            android:name="com.ieeecimatec.pim2pelod2.splashInicial"
+22-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:13:19-48
+23            android:theme="@style/AppTheme.NoActionBar" >
+23-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:14:13-56
+24            <intent-filter>
+24-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:15:13-18:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:16:17-69
+25-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:16:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:17:17-76
+27-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:17:27-74
+28            </intent-filter>
+29        </activity> <!-- tela de carregamento -->
+30
+31        <activity
+31-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:22:9-31:20
+32            android:name="com.ieeecimatec.pim2pelod2.MainActivity"
+32-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:23:13-41
+33            android:label="@string/app_name"
+33-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:24:13-45
+34            android:theme="@style/AppTheme.NoActionBar" >
+34-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:25:13-56
+35            <intent-filter>
+35-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:15:13-18:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:16:17-69
+36-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:16:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:17:17-76
+38-->C:\Users\ferna\AndroidStudioProjects\PIM2PELOD2\app\src\main\AndroidManifest.xml:17:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <provider
+42-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\ferna\.gradle\caches\transforms-2\files-2.1\64b2d8bb90f2c039608d04ac89462f58\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+43            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\ferna\.gradle\caches\transforms-2\files-2.1\64b2d8bb90f2c039608d04ac89462f58\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+44            android:authorities="com.ieeecimatec.pim2pelod2.lifecycle-process"
+44-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\ferna\.gradle\caches\transforms-2\files-2.1\64b2d8bb90f2c039608d04ac89462f58\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+45            android:exported="false"
+45-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\ferna\.gradle\caches\transforms-2\files-2.1\64b2d8bb90f2c039608d04ac89462f58\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+46            android:multiprocess="true" />
+46-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\ferna\.gradle\caches\transforms-2\files-2.1\64b2d8bb90f2c039608d04ac89462f58\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+47    </application>
+48
+49</manifest>
