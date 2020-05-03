@@ -2,42 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    android:id="@+id/navigation_app"
+    app:startDestination="@id/nav_dados_cadastrados">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_dados_cadastrados"
         android:name="com.ieeecimatec.pim2pelod2.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Dados Cadastrados"
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.ieeecimatec.pim2pelod2.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
-
-        <argument
-            android:name="myArg"
-            app:argType="string" />
+            android:id="@+id/action_nav_dados_cadastrados_to_nav_calcular"
+            app:destination="@id/nav_calcular" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_calcular"
         android:name="com.ieeecimatec.pim2pelod2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:label="Calcular"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_calcular_to_nav_dados_cadastrados"
+            app:destination="@id/nav_dados_cadastrados" />
+    </fragment>
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.ieeecimatec.pim2pelod2.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+
 </navigation>
