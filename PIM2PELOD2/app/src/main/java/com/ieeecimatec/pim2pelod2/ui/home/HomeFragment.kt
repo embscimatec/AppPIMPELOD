@@ -19,7 +19,8 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(Layoutinflater: LayoutInflater,
                               container: ViewGroup?, savedInstantState: Bundle?): View? {
-        return Layoutinflater.inflate(R.layout.fragment_gallery, container, false)
+        return Layoutinflater.inflate(R.layout.fragment_home, container, false)
+
     }
 
 }

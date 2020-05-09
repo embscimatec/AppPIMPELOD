@@ -42,13 +42,14 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-/*    override fun onNavigationItemSelected(menuItem : MenuItem){
-        val newPage = Intent()
+    /*override fun onNavigationItemSelected(menuItem : MenuItem) : Boolean {
+
         when(menuItem.itemId){
             R.id.nav_dados -> {
-                newPage.
+                val newPage = Intent(this, escolha_calculo::class.java)
             }
         }
+        return true
     }*/
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

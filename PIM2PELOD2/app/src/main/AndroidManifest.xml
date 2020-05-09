@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".splashInicial"
+        <activity android:name=".escolha_calculo"></activity>
+        <activity android:name=".escolha_de_Calculo" />
+        <activity
+            android:name=".splashInicial"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity> <!--tela de carregamento-->
-
+        </activity> <!-- tela de carregamento -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

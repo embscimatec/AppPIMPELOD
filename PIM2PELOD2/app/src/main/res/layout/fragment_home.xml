@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:layout_marginHorizontal="100px"
+        android:text="Página de dados"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="356dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

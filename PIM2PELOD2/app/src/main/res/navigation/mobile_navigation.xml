@@ -11,9 +11,6 @@
         android:label="Dados Cadastrados"
         tools:layout="@layout/fragment_home">
 
-        <action
-            android:id="@+id/action_nav_dados_cadastrados_to_nav_calcular"
-            app:destination="@id/nav_calcular" />
     </fragment>
 
     <fragment
