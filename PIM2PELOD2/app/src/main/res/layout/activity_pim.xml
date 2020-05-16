@@ -124,6 +124,242 @@
         </RadioGroup>
 
 
+        <TextView
+            android:id="@+id/question4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/pimpergunta4"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/branco" />
+
+        <RadioGroup
+            android:id="@+id/Pao2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sim"
+            android:shadowColor="@color/cinzaEscuro"
+            android:textColor="@color/branco"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:buttonTint="@color/cinzaEscuro"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/Pao2sim"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nao"
+            android:shadowColor="@color/cinzaEscuro"
+            android:textColor="@color/branco"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:buttonTint="@color/cinzaEscuro"
+            android:layout_marginTop="20dp"
+            android:id="@+id/Pao2nao"
+            />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/question5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/pimpergunta5"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/branco" />
+        <RadioGroup
+            android:id="@+id/baseExcesso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sim"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/baseExcessosim"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nao"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:id="@+id/baseExcessonao"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/pimpergunta6"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/branco" />
+        <RadioGroup
+            android:id="@+id/ventilacaoMecanica"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sim"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/ventilacaosim"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nao"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:id="@+id/ventilacaonao"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/pimpergunta7"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/branco" />
+        <RadioGroup
+            android:id="@+id/razaoEntrada"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sim"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/razaoEntradasim"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nao"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:id="@+id/razaoEntradanao"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/pimpergunta8"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/branco" />
+        <RadioGroup
+            android:id="@+id/circulacaoExtracorporea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sim"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/circulacaosim"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nao"
+                android:shadowColor="@color/cinzaEscuro"
+                android:textColor="@color/branco"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:buttonTint="@color/cinzaEscuro"
+                android:layout_marginTop="20dp"
+                android:id="@+id/circulacaonao"
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonCalcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Calcular"
+            android:textColor="@color/branco"
+            android:fontFamily="sans-serif"
+            android:textSize="14pt"
+            android:backgroundTint="@color/azulClaro"
+            />
+
+
     </LinearLayout>
 
 </ScrollView>

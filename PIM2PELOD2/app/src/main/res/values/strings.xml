@@ -14,8 +14,13 @@
     <string name="home_second">Home Second</string>
     <string name="title_activity_p_i_m">PIM2:</string>
     <string name="pimpergunta1">Pressão sistólica:</string>
-    <string name="pimpergunta2">PaO²</string>
+    <string name="pimpergunta2">PaO²:</string>
     <string name="pimpergunta3">Reação das pupilas:</string>
+    <string name="pimpergunta4">PAO2:</string>
+    <string name="pimpergunta5">Base de excesso nas artérias ou capilares:</string>
+    <string name="pimpergunta6">Ventilação mecânica</string>
+    <string name="pimpergunta7">Recuperação cirúrgica ou de procedimento como principal razão de entrada</string>
+    <string name="pimpergunta8">Admissão após circulação extracorpórea</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
 
