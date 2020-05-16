@@ -18,22 +18,24 @@
         android:layout_marginLeft="40px"
         android:background="@color/azulClaro"
 
+        android:onClick="abrirPIM"
         android:text="PIM2"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="20dp" />
 
     <Button
-            android:id="@+id/buttonPELOD"
-            android:layout_width="120dp"
-            android:layout_height="55dp"
-            android:left="@id/buttonPIM"
-            android:layout_margin="100px"
-            android:background="@color/azulClaro"
-            android:text="PELOD2"
-            android:textColor="@color/branco"
-            android:textSize="20dp"
-            android:textAlignment="center"/>
+        android:id="@+id/buttonPELOD"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_margin="100px"
+        android:background="@color/azulClaro"
+        android:left="@id/buttonPIM"
+        android:onClick="abrirPELOD"
+        android:text="PELOD2"
+        android:textAlignment="center"
+        android:textColor="@color/branco"
+        android:textSize="20dp" />
 
 
 </LinearLayout>
