@@ -10,61 +10,117 @@ import kotlinx.android.synthetic.main.activity_pim.*
 
 class PIM : AppCompatActivity() {
 
-
-    var pupila : Int = 1
-
+    var cont : Int = 0 //esse contador vai fazer a verificação dos radioGrups marcados
+    var podeCalcular : Boolean = false //essa variavel vai controlar a passagem da pagina
+    //declaração das variáveis para efetuação do calculo
+    var pupila : Int = 0
+    var pao22 : Int = 0
+    var baseDeExcesso : Int = 0
+    var ventilacao : Int = 0
+    var razao : Int = 0
+    var circulacao : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pim)
 
-        val pressaoSistolica = pressao.text.toString() //obtem o valor da pressao sistólica
-        val pao = PaO2.text.toString() //obtem o valor do PaO2
+        var pressaoSistolica = pressao.text.toString()//obtem o valor da pressao sistólica
+        if(!pressaoSistolica.equals("")){
+            val pint = pressaoSistolica.toInt()
+            cont++
+            Toast.makeText(applicationContext,"Nao esta vazio",
+                Toast.LENGTH_SHORT).show()
+        }
+        var pao = PaO2.text.toString() //obtem o valor do PaO2
+        if(pao.length != 0){
+            val paoInt = pao.toInt()
+            cont++
+            Toast.makeText(applicationContext,"Nao esta vazio",
+                Toast.LENGTH_SHORT).show()
+
+        }
 
         //radioButton da reação da pupila
-        val radioGroup1 = findViewById<RadioGroup>(R.id.reacaoPupila)
-        radioGroup1?.setOnCheckedChangeListener { group, checkedId ->
-            var text = "You selected: "
-            text += if (R.id.Reacaosim == checkedId) "SIM" else "NAO"
+        reacaoPupila.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.Reacaosim == checkedId) {
+                    pupila = 1;
+                }
+                cont++
+               // podeCalcular = true;
+            })
 
-        }
-
-        val radioGroup2 = findViewById<RadioGroup>(R.id.Pao2)
-        radioGroup2?.setOnCheckedChangeListener { group, checkedId ->
-            var text = "You selected: "
-            text += if (R.id.Pao2sim == checkedId) "SIM" else "NAO"
-
-        }
-
-        val radioGroup3 = findViewById<RadioGroup>(R.id.baseExcesso)
-        radioGroup3?.setOnCheckedChangeListener { group, checkedId ->
-            var text = "You selected: "
-            text += if (R.id.baseExcessosim == checkedId) "SIM" else "NAO"
-
-        }
-
-        val radioGroup4 = findViewById<RadioGroup>(R.id.ventilacaoMecanica)
-        radioGroup4?.setOnCheckedChangeListener { group, checkedId ->
-            var text = "You selected: "
-            text += if (R.id.ventilacaosim == checkedId) "SIM" else "NAO"
-
-        }
-
-        val radioGroup5 = findViewById<RadioGroup>(R.id.razaoEntrada)
-        radioGroup5?.setOnCheckedChangeListener { group, checkedId ->
-            var text = "You selected: "
-            text += if (R.id.razaoEntradasim == checkedId) "SIM" else "NAO"
-
-        }
-
-        val radioGroup6 = findViewById<RadioGroup>(R.id.circulacaoExtracorporea)
-        radioGroup6?.setOnCheckedChangeListener { group, checkedId ->
-            var text = "You selected: "
-            text += if (R.id.circulacaosim == checkedId) "SIM" else "NAO"
-
-        }
+        /*if(!reacaoPupila.isSelected()){
+            podeCalcular = false;
+        }*/
 
 
+        Pao2.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.Pao2sim == checkedId) {
+                    pao22 = 1;
+                }
+                cont++;
+                //podeCalcular = true;
+            })
+
+        /*if(!Pao2.isSelected()){
+            podeCalcular = false;
+        }*/
+
+        baseExcesso.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.baseExcessosim == checkedId) {
+                    baseDeExcesso = 1;
+                }
+                cont++;
+                //podeCalcular = true;
+            })
+        /*if(!baseExcesso.isSelected()){
+            podeCalcular = false;
+        }*/
+
+        ventilacaoMecanica.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.ventilacaosim == checkedId) {
+                    ventilacao = 1;
+                }
+                cont++;
+                //podeCalcular = true;
+            })
+        /*if(!ventilacaoMecanica.isSelected()){
+            podeCalcular = false;
+        }*/
+
+        razaoEntrada.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.razaoEntradasim == checkedId) {
+                    razao = 1;
+                }
+                cont++
+                //podeCalcular = true;
+            })
+        /*if(!razaoEntrada.isSelected()){
+            podeCalcular = false;
+        }*/
+
+        circulacaoExtracorporea.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.circulacaosim == checkedId) {
+                    circulacao = 1;
+                }
+                cont++
+                //podeCalcular = true;
+            })
+        /*if(!circulacaoExtracorporea.isSelected()){
+            podeCalcular = false;
+        }*/
     }
 
     fun radio1(view : View){
@@ -101,6 +157,17 @@ class PIM : AppCompatActivity() {
         val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
         Toast.makeText(applicationContext,"Fez circulação: ${radio.text}",
             Toast.LENGTH_SHORT).show()
+    }
+
+    fun clickCalcular(view : View){
+        if(cont < 6){
+            Toast.makeText(applicationContext,"Você não respondeu todas as perguntas!",
+                Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(applicationContext,"Indo para a próxima página...",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
