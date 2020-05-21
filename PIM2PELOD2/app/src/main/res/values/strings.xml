@@ -12,7 +12,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
-    <string name="calculando">&#160;calculando...</string>
+    <string name="calculando">calculando...</string>
     <string name="title_activity_p_i_m">PIM2:</string>
     <string name="pimpergunta1">Pressão sistólica:</string>
     <string name="pimpergunta2">PaO²:</string>
@@ -24,6 +24,11 @@
     <string name="pimpergunta8">Admissão após circulação extracorpórea</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
+
+    <string name="ficha">Ficha do Paciente</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="nasc">" Data de Nascimento:"</string>
+    <string name="continuar">Continuar</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
