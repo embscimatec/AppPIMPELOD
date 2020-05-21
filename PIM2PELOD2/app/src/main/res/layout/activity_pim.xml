@@ -97,6 +97,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio1"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -110,6 +111,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio1"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -146,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sim"
+            android:onClick="radio2"
             android:shadowColor="@color/cinzaEscuro"
             android:textColor="@color/branco"
             android:textSize="10pt"
@@ -158,6 +161,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radio2"
             android:text="@string/nao"
             android:shadowColor="@color/cinzaEscuro"
             android:textColor="@color/branco"
@@ -190,6 +194,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio3"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -203,6 +208,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio3"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -234,6 +240,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio4"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -247,6 +254,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio4"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -278,6 +286,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio5"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -291,6 +300,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio5"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -322,6 +332,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio6"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -335,6 +346,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="radio6"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -350,6 +362,7 @@
             android:id="@+id/buttonCalcular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
             android:text="Calcular"

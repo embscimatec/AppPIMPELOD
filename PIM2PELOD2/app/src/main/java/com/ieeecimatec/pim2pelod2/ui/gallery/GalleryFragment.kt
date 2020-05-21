@@ -9,7 +9,9 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.ieeecimatec.pim2pelod2.PIM
 import com.ieeecimatec.pim2pelod2.R
+import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.*
+import kotlinx.android.synthetic.main.fragment_gallery.view.buttonPIM
 
 
 class GalleryFragment : Fragment() {
@@ -27,10 +29,9 @@ class GalleryFragment : Fragment() {
         return view
     }
 
-
-
-
-
-
+    fun clickPIM (view : View){
+        val intent = Intent (this.context, PIM::class.java )
+        startActivity(intent)
+    }
 
 }
