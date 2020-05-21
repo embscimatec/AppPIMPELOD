@@ -1,5 +1,6 @@
 package com.ieeecimatec.pim2pelod2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,21 +20,25 @@ class PIM : AppCompatActivity() {
     var ventilacao : Int = 0
     var razao : Int = 0
     var circulacao : Int = 0
+    var pInt = 1
+    var paoInt = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pim)
 
+       //val int : Intent = Intent.getIntentOld()
+
         var pressaoSistolica = pressao.text.toString()//obtem o valor da pressao sistólica
         if(!pressaoSistolica.equals("")){
-            val pint = pressaoSistolica.toInt()
+            pInt = pressaoSistolica.toInt()
             cont++
             Toast.makeText(applicationContext,"Nao esta vazio",
                 Toast.LENGTH_SHORT).show()
         }
         var pao = PaO2.text.toString() //obtem o valor do PaO2
         if(pao.length != 0){
-            val paoInt = pao.toInt()
+            paoInt = pao.toInt()
             cont++
             Toast.makeText(applicationContext,"Nao esta vazio",
                 Toast.LENGTH_SHORT).show()
@@ -159,6 +164,12 @@ class PIM : AppCompatActivity() {
             Toast.LENGTH_SHORT).show()
     }
 
+    fun Resultado() : Int { //metodo do calculo
+        val resul : Int = (paoInt * pInt) / 8
+
+        return resul
+    }
+
     fun clickCalcular(view : View){
         if(cont < 6){
             Toast.makeText(applicationContext,"Você não respondeu todas as perguntas!",
@@ -167,6 +178,18 @@ class PIM : AppCompatActivity() {
         else{
             Toast.makeText(applicationContext,"Indo para a próxima página...",
                 Toast.LENGTH_SHORT).show()
+
+            val resposta = Resultado()
+            val rep = "oi"
+
+            /*val intent = Intent(this, Resultado::class.java)
+            intent.putExtra(Intent.EXTRA_COMPONENT_NAME,)
+            intent.putExtra("resposta", resposta) //passando o valor do resultado para a outra página
+            startActivity(intent)
+            //na outra página
+            val resposta = getIntent().getExtras().
+
+             */
         }
     }
 
