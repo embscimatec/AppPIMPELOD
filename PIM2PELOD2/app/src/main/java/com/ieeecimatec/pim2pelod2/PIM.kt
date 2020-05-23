@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
@@ -22,6 +23,7 @@ class PIM : AppCompatActivity() {
     var circulacao : Int = 0
     var pInt = 1
     var paoInt = 1
+    var pressaoSistolica = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class PIM : AppCompatActivity() {
 
        //val int : Intent = Intent.getIntentOld()
 
-        var pressaoSistolica = pressao.text.toString()//obtem o valor da pressao sistólica
+        /*var pressaoSistolica = pressao.text.toString()//obtem o valor da pressao sistólica
         if(!pressaoSistolica.equals("")){
             pInt = pressaoSistolica.toInt()
             cont++
@@ -43,7 +45,7 @@ class PIM : AppCompatActivity() {
             Toast.makeText(applicationContext,"Nao esta vazio",
                 Toast.LENGTH_SHORT).show()
 
-        }
+        }*/
 
         //radioButton da reação da pupila
         reacaoPupila.setOnCheckedChangeListener(
@@ -128,6 +130,16 @@ class PIM : AppCompatActivity() {
         }*/
     }
 
+    /*fun recebePressao(view : View){
+        val pressao = findViewById<EditText>(R.id.pressao)
+        pressaoSistolica = pressao.text.toString()
+        if (pressaoSistolica != "") {
+            Toast.makeText(applicationContext,"FOI!! ${pressaoSistolica}mmHg",
+                Toast.LENGTH_SHORT).show()
+        }
+
+    }*/
+
     fun radio1(view : View){
         val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
         Toast.makeText(applicationContext,"Reação das pupilas: ${radio.text}",
@@ -135,31 +147,31 @@ class PIM : AppCompatActivity() {
     }
 
     fun radio2(view : View){
-        val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
+        val radio: RadioButton = findViewById(Pao2.checkedRadioButtonId)
         Toast.makeText(applicationContext,"PAO2: ${radio.text}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio3(view : View){
-        val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
+        val radio: RadioButton = findViewById(baseExcesso.checkedRadioButtonId)
         Toast.makeText(applicationContext,"Base de excesso: ${radio.text}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio4(view : View){
-        val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
+        val radio: RadioButton = findViewById(ventilacaoMecanica.checkedRadioButtonId)
         Toast.makeText(applicationContext,"Ventilação mecânica: ${radio.text}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio5(view : View){
-        val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
+        val radio: RadioButton = findViewById(razaoEntrada.checkedRadioButtonId)
         Toast.makeText(applicationContext,"Razão de entrada por cirurgia: ${radio.text}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio6(view : View){
-        val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
+        val radio: RadioButton = findViewById(circulacaoExtracorporea.checkedRadioButtonId)
         Toast.makeText(applicationContext,"Fez circulação: ${radio.text}",
             Toast.LENGTH_SHORT).show()
     }
@@ -171,6 +183,8 @@ class PIM : AppCompatActivity() {
     }
 
     fun clickCalcular(view : View){
+        // Tentear usar receberPressao() aqui
+
         if(cont < 6){
             Toast.makeText(applicationContext,"Você não respondeu todas as perguntas!",
                 Toast.LENGTH_SHORT).show()
@@ -192,5 +206,6 @@ class PIM : AppCompatActivity() {
              */
         }
     }
+
 
 }
