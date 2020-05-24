@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Resultado"></activity>
+        <activity android:name=".splash_calculando" />
         <activity
             android:name=".PIM"
             android:label="@string/title_activity_p_i_m"
@@ -17,7 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".splashInicial"
             android:theme="@style/AppTheme.NoActionBar">
