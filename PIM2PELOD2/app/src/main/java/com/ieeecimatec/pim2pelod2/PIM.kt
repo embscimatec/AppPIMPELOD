@@ -22,8 +22,12 @@ class PIM : AppCompatActivity() {
     var ventilacao : Int = 0
     var razao : Int = 0
     var circulacao : Int = 0
+    var altoRisco : Int = 0
+    var baixoRisco : Int = 0
     var paoInt = 1
     var pressaoSistolica = 1
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -188,8 +192,13 @@ class PIM : AppCompatActivity() {
         paoInt = PaO2Txt.toInt()
     }
 
-    fun Resultado() : Int { //metodo do calculo
-        val resul : Int = (paoInt * pressaoSistolica) / 8
+    fun Resultado() : Double { //metodo do calculo
+        val PIM2 : Double = ((0.01395 * Math.abs(pressaoSistolica - 120)) + (3.0791 * pupila) + (0.2888 * (100 * paoInt)) + (-1.0244 * razao)
+                - (-0.07507 * circulacao) + (1.6829 * altoRisco) + (-1.5770 * baixoRisco) + (-4.8841) )
+
+        val prob = (Math.exp(PIM2) / (1 + Math.exp(PIM2)) )
+
+        val resul = prob * 100
 
         return resul
     }
