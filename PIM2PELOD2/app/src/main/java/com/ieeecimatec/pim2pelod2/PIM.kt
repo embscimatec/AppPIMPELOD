@@ -14,6 +14,7 @@ class PIM : AppCompatActivity() {
 
     var cont : Int = 0 //esse contador vai fazer a verificação dos radioGrups marcados
     var podeCalcular : Boolean = false //essa variavel vai controlar a passagem da pagina
+
     //declaração das variáveis para efetuação do calculo
     var pupila : Int = 0
     var pao22 : Int = 0
@@ -21,9 +22,8 @@ class PIM : AppCompatActivity() {
     var ventilacao : Int = 0
     var razao : Int = 0
     var circulacao : Int = 0
-    var pInt = 1
     var paoInt = 1
-    var pressaoSistolica = ""
+    var pressaoSistolica = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,21 +31,21 @@ class PIM : AppCompatActivity() {
 
        //val int : Intent = Intent.getIntentOld()
 
-        /*var pressaoSistolica = pressao.text.toString()//obtem o valor da pressao sistólica
-        if(!pressaoSistolica.equals("")){
-            pInt = pressaoSistolica.toInt()
+        /*var PressaoSistolica = findViewById<EditText>(R.id.pressao).text.toString() //obtem o valor da pressao sistólica
+        if(!PressaoSistolica.equals("")){
+            pressaoSistolica = PressaoSistolica.toInt()
             cont++
-            Toast.makeText(applicationContext,"Nao esta vazio",
+            Toast.makeText(applicationContext,"${PressaoSistolica}",
                 Toast.LENGTH_SHORT).show()
         }
-        var pao = PaO2.text.toString() //obtem o valor do PaO2
-        if(pao.length != 0){
+        var pao = findViewById<EditText>(R.id.PaO2).text.toString() //obtem o valor do PaO2
+        if(!pao.equals("")){
             paoInt = pao.toInt()
             cont++
-            Toast.makeText(applicationContext,"Nao esta vazio",
+            Toast.makeText(applicationContext,"${pao}",
                 Toast.LENGTH_SHORT).show()
 
-        }*/
+        } */
 
         //radioButton da reação da pupila
         reacaoPupila.setOnCheckedChangeListener(
@@ -176,21 +176,35 @@ class PIM : AppCompatActivity() {
             Toast.LENGTH_SHORT).show()
     }
 
+    fun getPressao(){
+        val editTxt = findViewById<EditText>(R.id.pressao)
+        val pressaotxt = editTxt.text.toString()
+        pressaoSistolica = pressaotxt.toInt()
+    }
+
+    fun getPaO2(){
+        val editTxt = findViewById<EditText>(R.id.PaO2)
+        val PaO2Txt = editTxt.text.toString()
+        paoInt = PaO2Txt.toInt()
+    }
+
     fun Resultado() : Int { //metodo do calculo
-        val resul : Int = (paoInt * pInt) / 8
+        val resul : Int = (paoInt * pressaoSistolica) / 8
 
         return resul
     }
 
     fun clickCalcular(view : View){
-        // Tentear usar receberPressao() aqui
+        // Tentar usar receberPressao() aqui
 
+        getPressao()
+        getPaO2()
         if(cont < 6){
-            Toast.makeText(applicationContext,"Você não respondeu todas as perguntas!",
+            Toast.makeText(applicationContext,"Você não respondeu todas as perguntas! Pressao = ${pressaoSistolica} e PaO2 = ${paoInt}",
                 Toast.LENGTH_SHORT).show()
         }
         else{
-            Toast.makeText(applicationContext,"Indo para a próxima página...",
+            Toast.makeText(applicationContext,"Indo para a próxima página... Pressao = ${pressaoSistolica} e PaO2 = ${paoInt}",
                 Toast.LENGTH_SHORT).show()
 
             val resposta = Resultado()
