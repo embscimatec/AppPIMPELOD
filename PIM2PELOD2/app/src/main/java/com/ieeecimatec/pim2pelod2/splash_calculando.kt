@@ -12,8 +12,12 @@ class splash_calculando : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tela_calculando)
 
+        val resultado : Double = intent.getSerializableExtra("resultado") as Double
+
         Handler().postDelayed({
-            startActivity(Intent(this, Resultado::class.java))
+            val it = Intent(this, Resultado::class.java)
+            it.putExtra("resultado", resultado)
+            startActivity(it)
 
             finish()
         }, SLPASH_TIME_OUT)

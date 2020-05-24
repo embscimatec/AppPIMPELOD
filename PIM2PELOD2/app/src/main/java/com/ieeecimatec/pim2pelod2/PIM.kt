@@ -217,17 +217,22 @@ class PIM : AppCompatActivity() {
             Toast.makeText(applicationContext,"Indo para a próxima página... Pressao = ${pressaoSistolica} PaO2 = ${paoInt} ${baseDeExcesso}",
                 Toast.LENGTH_SHORT).show()
 
-            val resposta = Resultado()
+            val resultado : Double = Resultado()
             val rep = "oi"
 
-            /*val intent = Intent(this, Resultado::class.java)
-            intent.putExtra(Intent.EXTRA_COMPONENT_NAME,)
-            intent.putExtra("resposta", resposta) //passando o valor do resultado para a outra página
-            startActivity(intent)
-            //na outra página
-            val resposta = getIntent().getExtras().
+            /*val intent = Intent(this, Resultado::class.java).apply {
+                putExtra(Intent.EXTRA_COMPONENT_NAME, resultado);
+            } */
 
-             */
+            val intent = Intent(this, splash_calculando::class.java)
+            intent.putExtra("resultado", resultado)
+
+            //passando o valor do resultado para a outra página
+            startActivity(intent)
+
+
+
+
         }
     }
 
