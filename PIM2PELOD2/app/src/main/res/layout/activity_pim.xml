@@ -86,45 +86,20 @@
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
-
-        <RadioGroup
-            android:id="@+id/reacaoPupila"
+        <EditText
+            android:id="@+id/baseExcesso"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radio1"
-                android:text="@string/sim"
-                android:shadowColor="@color/cinzaEscuro"
-                android:textColor="@color/branco"
-                android:textSize="10pt"
-                android:fontFamily="sans-serif"
-                android:buttonTint="@color/cinzaEscuro"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="50dp"
-               android:id="@+id/Reacaosim"
-                />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radio1"
-                android:text="@string/nao"
-                android:shadowColor="@color/cinzaEscuro"
-                android:textColor="@color/branco"
-                android:textSize="10pt"
-                android:fontFamily="sans-serif"
-                android:buttonTint="@color/cinzaEscuro"
-                android:layout_marginTop="20dp"
-                android:id="@+id/Reacaonao"
-                />
-
-
-        </RadioGroup>
-
+            android:layout_height="40dp"
+            android:background="@color/branco"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_margin="10dp"
+            android:bottom="@id/question4"
+            android:textSize="10pt"
+            android:fontFamily="sans-serif-thin"
+            android:textAlignment="center"
+            android:textColor="@color/preto"
+            android:hint="(m.mol/L)" />
 
         <TextView
             android:id="@+id/question4"
@@ -138,7 +113,7 @@
             android:textColor="@color/branco" />
 
         <RadioGroup
-            android:id="@+id/Pao2"
+            android:id="@+id/reacaoPupila"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -148,7 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sim"
-            android:onClick="radio2"
+            android:onClick="radio1"
             android:shadowColor="@color/cinzaEscuro"
             android:textColor="@color/branco"
             android:textSize="10pt"
@@ -156,12 +131,12 @@
             android:buttonTint="@color/cinzaEscuro"
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
-            android:id="@+id/Pao2sim"
+            android:id="@+id/Reacaosim"
             />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="radio2"
+            android:onClick="radio1"
             android:text="@string/nao"
             android:shadowColor="@color/cinzaEscuro"
             android:textColor="@color/branco"
@@ -169,7 +144,7 @@
             android:fontFamily="sans-serif"
             android:buttonTint="@color/cinzaEscuro"
             android:layout_marginTop="20dp"
-            android:id="@+id/Pao2nao"
+            android:id="@+id/Reacaonao"
             />
         </RadioGroup>
 
@@ -185,7 +160,7 @@
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
         <RadioGroup
-            android:id="@+id/baseExcesso"
+            android:id="@+id/diagnostico"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -194,7 +169,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio3"
+                android:onClick="radio2"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -203,12 +178,12 @@
                 android:buttonTint="@color/cinzaEscuro"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="50dp"
-                android:id="@+id/baseExcessosim"
+                android:id="@+id/diagnosticoSim"
                 />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio3"
+                android:onClick="radio2"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -216,7 +191,7 @@
                 android:fontFamily="sans-serif"
                 android:buttonTint="@color/cinzaEscuro"
                 android:layout_marginTop="20dp"
-                android:id="@+id/baseExcessonao"
+                android:id="@+id/diagnosticoNao"
                 />
         </RadioGroup>
 
@@ -240,7 +215,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio4"
+                android:onClick="radio3"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -254,7 +229,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio4"
+                android:onClick="radio3"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -286,7 +261,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio5"
+                android:onClick="radio4"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -300,7 +275,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio5"
+                android:onClick="radio4"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -332,7 +307,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio6"
+                android:onClick="radio5"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -346,7 +321,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio6"
+                android:onClick="radio5"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
