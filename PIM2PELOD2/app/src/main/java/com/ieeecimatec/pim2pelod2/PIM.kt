@@ -3,12 +3,16 @@ package com.ieeecimatec.pim2pelod2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.AlarmClock
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_pim.*
+
+const val EXTRA_MESSAGE = "com.ieeecimatec.pim2pelod2.MESSAGE"
 
 class PIM : AppCompatActivity() {
 
@@ -33,23 +37,8 @@ class PIM : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pim)
 
-       //val int : Intent = Intent.getIntentOld()
-
-        /*var PressaoSistolica = findViewById<EditText>(R.id.pressao).text.toString() //obtem o valor da pressao sistólica
-        if(!PressaoSistolica.equals("")){
-            pressaoSistolica = PressaoSistolica.toInt()
-            cont++
-            Toast.makeText(applicationContext,"${PressaoSistolica}",
-                Toast.LENGTH_SHORT).show()
-        }
-        var pao = findViewById<EditText>(R.id.PaO2).text.toString() //obtem o valor do PaO2
-        if(!pao.equals("")){
-            paoInt = pao.toInt()
-            cont++
-            Toast.makeText(applicationContext,"${pao}",
-                Toast.LENGTH_SHORT).show()
-
-        } */
+        /*supportActionBar!!.title = "Go Back"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true) */
 
         //radioButton da reação da pupila
         reacaoPupila.setOnCheckedChangeListener(
@@ -191,6 +180,11 @@ class PIM : AppCompatActivity() {
         val PIM2 : Double = ( (0.01395 * Math.abs(pressaoSistolica - 120)) + (3.0791 * pupila) + (0.2888 * (100 * paoInt)) +
                 (0.104 * Math.abs(baseDeExcesso)) + (1.3552 * ventilacao) + (-1.0244 * razao) - (-0.07507 * circulacao) +
                 (1.6829 * altoRisco) + (-1.5770 * baixoRisco) + (-4.8841) )
+        val r = PIM2.toString()
+        Log.println(r)
+
+        /*Toast.makeText(applicationContext,"${PIM2} e ${Math.abs(baseDeExcesso)}",
+            Toast.LENGTH_SHORT).show() */
 
         val prob = (Math.exp(PIM2) / (1 + Math.exp(PIM2)) )
 
@@ -214,24 +208,23 @@ class PIM : AppCompatActivity() {
                 Toast.LENGTH_SHORT).show()
         }
         else{
-            Toast.makeText(applicationContext,"Indo para a próxima página... Pressao = ${pressaoSistolica} PaO2 = ${paoInt} ${baseDeExcesso}",
-                Toast.LENGTH_SHORT).show()
 
             val resultado : Double = Resultado()
-            val rep = "oi"
+            val resultadoStr = resultado.toString()
 
-            /*val intent = Intent(this, Resultado::class.java).apply {
-                putExtra(Intent.EXTRA_COMPONENT_NAME, resultado);
-            } */
+            Toast.makeText(applicationContext,"Indo para a próxima página... Pressao = ${pressaoSistolica} PaO2 = ${paoInt} Base ${baseDeExcesso}" +
+                    "${resultadoStr} e ${resultado}",
+                Toast.LENGTH_SHORT).show()
+
+
+
+            val rep = "oi"
 
             val intent = Intent(this, splash_calculando::class.java)
             intent.putExtra("resultado", resultado)
 
             //passando o valor do resultado para a outra página
             startActivity(intent)
-
-
-
 
         }
     }

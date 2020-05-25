@@ -11,8 +11,6 @@ class Resultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultado)
 
-       // val resultado = intent.getDoubleExtra(Intent.EXTRA_COMPONENT_NAME)
-
         val resultado : Double = intent.getSerializableExtra("resultado") as Double
 
         textView.text = resultado.toString()

@@ -16,7 +16,8 @@
         <activity
             android:name=".PIM"
             android:label="@string/title_activity_p_i_m"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

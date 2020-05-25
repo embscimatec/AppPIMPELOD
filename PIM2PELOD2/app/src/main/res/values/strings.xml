@@ -15,7 +15,7 @@
     <string name="calculando">calculando...</string>
     <string name="title_activity_p_i_m">PIM2:</string>
     <string name="pimpergunta1">Pressão sistólica:</string>
-    <string name="pimpergunta2">PaO²:</string>
+    <string name="pimpergunta2">PaO<sub>2</sub>:</string>
     <string name="pimpergunta3">Base de excesso nas artérias ou capilares:</string>
     <string name="pimpergunta4">Reação das pupilas</string>
     <string name="pimpergunta5">Diagnóstico de alto risco:</string>
