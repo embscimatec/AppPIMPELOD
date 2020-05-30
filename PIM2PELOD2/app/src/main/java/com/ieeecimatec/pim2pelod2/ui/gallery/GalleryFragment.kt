@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation.findNavController
+import com.ieeecimatec.pim2pelod2.Ficha_paciente
 import com.ieeecimatec.pim2pelod2.PIM
 import com.ieeecimatec.pim2pelod2.R
 import kotlinx.android.synthetic.main.fragment_gallery.*
@@ -22,15 +24,15 @@ class GalleryFragment : Fragment() {
         val view =  Layoutinflater.inflate(R.layout.fragment_gallery, container, false)
 
         view.buttonPIM.setOnClickListener{ view ->
-            val intent = Intent (this.context, PIM::class.java )
+            val intent = Intent (this.context, Ficha_paciente::class.java )
             startActivity(intent)
         }
 
         return view
     }
 
-    fun clickPIM (view : View){
-        val intent = Intent (this.context, PIM::class.java )
+    fun clickPIM (view : View){ //esse método nao está funcionando
+        val intent = Intent (this.context, Ficha_paciente::class.java )
         startActivity(intent)
     }
 

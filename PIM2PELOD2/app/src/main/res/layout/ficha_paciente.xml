@@ -6,11 +6,16 @@
     android:background="@color/azulEscuro"
     android:gravity="center|top">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="voltar"
-        android:layout_gravity="left"/>
+    <ImageButton
+        android:layout_marginLeft="-150dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonBack"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/seta_voltar"
+        android:onClick="onBackPressed"
+        />
+
     <TextView
         android:layout_marginTop="100px"
         android:layout_gravity="center"
@@ -24,7 +29,7 @@
         android:background="@color/azulClaro" />
 
     <EditText
-        android:id="@+id/nome"
+        android:id="@+id/nomePaciente"
         android:layout_width="1000px"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -45,60 +50,23 @@
         android:layout_marginTop="150px"/>
 
     <!-- Mudando o layout para alinhar os inputs -->
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50px">
-
-        <EditText
-            android:id="@+id/dia"
-            android:layout_width="150px"
-            android:layout_height="100px"
-            android:layout_marginRight="20px"
-            android:background="@color/branco"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="numberSigned"
-            android:text="dd"
-            android:layout_toLeftOf="@id/mes"
-            android:textColor="@color/cinzaEscuro" />
-
-        <EditText
-            android:id="@+id/mes"
-            android:layout_centerHorizontal="true"
-            android:layout_width="150px"
-            android:layout_height="100px"
-            android:layout_marginRight="20px"
-            android:background="@color/branco"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="numberSigned"
-            android:text="mm"
-            android:textColor="@color/cinzaEscuro" />
-
-        <EditText
-            android:id="@+id/ano"
-            android:layout_width="150px"
-            android:layout_height="100px"
-            android:layout_toRightOf="@id/mes"
-            android:background="@color/branco"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="numberSigned"
-            android:text="aaaa"
-            android:textColor="@color/cinzaEscuro" />
-    </RelativeLayout>
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
 
     <Button
         android:id="@+id/continuar"
-        android:layout_marginTop="300px"
+        android:layout_marginTop="50px"
         android:layout_width="500px"
         android:layout_height="wrap_content"
         android:textColor="@color/branco"
         android:fontFamily="sans-serif"
         android:textSize="10pt"
         android:background="@color/azulClaro"
+        android:onClick="onContinuarPressed"
         android:text="@string/continuar" />
 
 

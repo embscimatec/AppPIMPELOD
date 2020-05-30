@@ -11,6 +11,7 @@
     tools:context=".ui.gallery.GalleryFragment">
 
 
+
     <Button
         android:id="@+id/buttonPIM"
         android:layout_width="120dp"

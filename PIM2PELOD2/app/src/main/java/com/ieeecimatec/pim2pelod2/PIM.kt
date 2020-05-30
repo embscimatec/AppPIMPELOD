@@ -181,7 +181,7 @@ class PIM : AppCompatActivity() {
                 (0.104 * Math.abs(baseDeExcesso)) + (1.3552 * ventilacao) + (-1.0244 * razao) - (-0.07507 * circulacao) +
                 (1.6829 * altoRisco) + (-1.5770 * baixoRisco) + (-4.8841) )
         val r = PIM2.toString()
-        Log.println(r)
+        //Log.println(r)
 
         /*Toast.makeText(applicationContext,"${PIM2} e ${Math.abs(baseDeExcesso)}",
             Toast.LENGTH_SHORT).show() */
