@@ -17,8 +17,9 @@ class Ficha_paciente : AppCompatActivity() {
 
     var nome_paciente = ""
     var idade : Int = 0;
-    val hoje = Calendar.getInstance()
+    val hoje = Calendar.getInstance() //recebe a data atual
     @RequiresApi(Build.VERSION_CODES.O)
+    //recebe a data mínima (idade maxima)
     val miniDate : Calendar = Calendar.Builder().setDate(hoje.get(Calendar.YEAR) - 16, hoje.get(Calendar.MONTH), hoje.get(Calendar.DAY_OF_MONTH)).build()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +27,8 @@ class Ficha_paciente : AppCompatActivity() {
         setContentView(R.layout.ficha_paciente)
         val date_Picker = findViewById<DatePicker>(R.id.datePicker)
         //date_Picker.setDatePickerFormat("DMY");
-        date_Picker.maxDate = Calendar.getInstance().timeInMillis
-        date_Picker.minDate = miniDate.timeInMillis
+        date_Picker.maxDate = Calendar.getInstance().timeInMillis  //maior data possivel
+        date_Picker.minDate = miniDate.timeInMillis //menor data possivel
         date_Picker.init(hoje.get(Calendar.YEAR), hoje.get(Calendar.MONTH),
             hoje.get(Calendar.DAY_OF_MONTH)
 
@@ -41,8 +42,8 @@ class Ficha_paciente : AppCompatActivity() {
         val ano = date_Picker.year
         val dia = date_Picker.dayOfMonth
     }
-    
-    fun getAge(mes : Int, ano : Int, dia : Int) : Int{
+
+    fun getAge(mes : Int, ano : Int, dia : Int) : Int{ //retorna o valor da idade do paciente
         var age : Int = 0
         if(mes < hoje.get(Calendar.MONTH) && dia < hoje.get(Calendar.DAY_OF_MONTH)){
             age = hoje.get(Calendar.YEAR)  - ano
@@ -54,16 +55,16 @@ class Ficha_paciente : AppCompatActivity() {
         return age;
     }
 
-    fun getNome(){
+    fun getNome(){ //recebe o nome do paciente
         val editTxt = findViewById<EditText>(R.id.nomePaciente)
         nome_paciente = editTxt.text.toString()
     }
 
-    fun onBackPressed(view : View){
-
+    fun onBackPressed(view : View){ //botao de retornar
+        this.finish()
     }
 
-    fun onContinuarPressed(view : View){
+    fun onContinuarPressed(view : View){ //chama a próxima tela: formulário PIM
         val intent = Intent (this, PIM::class.java )
         startActivity(intent)
     }

@@ -229,5 +229,9 @@ class PIM : AppCompatActivity() {
         }
     }
 
+    fun onBackPressed(view : View){ //botao de retornar
+        this.finish()
+    }
+
 
 }

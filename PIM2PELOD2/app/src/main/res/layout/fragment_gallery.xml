@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?> <!--tela de escolha-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:padding="30px"
-    style="@style/AppTheme"
-    tools:context=".ui.gallery.GalleryFragment">
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    style="@style/AppTheme.NoActionBar"
+    tools:context=".ui.gallery.GalleryFragment"
+    android:parentActivityName=".MainActivity">
+
+    <!--<include
+        layout="@layout/app_bar_teste"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:layout_marginLeft="10dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/buttonBack"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/seta_voltar"
+        android:onClick="onBackPressed"
+        /> -->
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="250dp"
+        android:padding="100px">
 
     <Button
         android:id="@+id/buttonPIM"
@@ -36,5 +58,6 @@
         android:textColor="@color/branco"
         android:textSize="20dp" />
 
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

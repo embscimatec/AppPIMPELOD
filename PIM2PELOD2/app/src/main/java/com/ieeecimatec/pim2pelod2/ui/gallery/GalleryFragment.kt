@@ -6,9 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toolbar
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.Navigation.findNavController
 import com.ieeecimatec.pim2pelod2.Ficha_paciente
+import com.ieeecimatec.pim2pelod2.MainActivity
 import com.ieeecimatec.pim2pelod2.PIM
 import com.ieeecimatec.pim2pelod2.R
 import kotlinx.android.synthetic.main.fragment_gallery.*
@@ -23,7 +27,8 @@ class GalleryFragment : Fragment() {
                               container: ViewGroup?, savedInstantState: Bundle?): View? {
         val view =  Layoutinflater.inflate(R.layout.fragment_gallery, container, false)
 
-        view.buttonPIM.setOnClickListener{ view ->
+
+                view.buttonPIM.setOnClickListener{ view ->
             val intent = Intent (this.context, Ficha_paciente::class.java )
             startActivity(intent)
         }
@@ -34,6 +39,11 @@ class GalleryFragment : Fragment() {
     fun clickPIM (view : View){ //esse método nao está funcionando
         val intent = Intent (this.context, Ficha_paciente::class.java )
         startActivity(intent)
+    }
+
+    fun onBackPressed(view: View){
+        val int = Intent(this.context, MainActivity::class.java)
+        startActivity(int)
     }
 
 }
