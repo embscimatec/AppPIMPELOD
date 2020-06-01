@@ -212,8 +212,9 @@ class PIM : AppCompatActivity() {
             val resultado : Double = Resultado()
             val resultadoStr = resultado.toString()
 
-            Toast.makeText(applicationContext,"Indo para a próxima página... Pressao = ${pressaoSistolica} PaO2 = ${paoInt} Base ${baseDeExcesso}" +
-                    "${resultadoStr} e ${resultado}",
+            txtResultado.text = "A probabilidade de morte é ${resultado}"
+
+            Toast.makeText(applicationContext, "${resultadoStr} e ${resultado}",
                 Toast.LENGTH_SHORT).show()
 
 
