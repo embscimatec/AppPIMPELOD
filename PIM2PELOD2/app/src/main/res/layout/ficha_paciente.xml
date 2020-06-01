@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/nome_completo"
+        android:hint="@string/nome_completo"
         android:textColor="@color/branco"
         android:textColorHint="@color/branco"
         android:backgroundTint="@color/branco"
