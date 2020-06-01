@@ -91,13 +91,38 @@
             android:textColor="@color/preto"
             android:hint="(mmHg)" />
 
+            <TextView
+                android:id="@+id/question3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pimpergunta3"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+            <EditText
+                android:id="@+id/FiO2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question4"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="%" />
+
         <TextView
-            android:id="@+id/question3"
+            android:id="@+id/question4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/pimpergunta3"
+            android:text="@string/pimpergunta4"
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
@@ -117,12 +142,12 @@
             android:hint="(m.mol/L)" />
 
         <TextView
-            android:id="@+id/question4"
+            android:id="@+id/question5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/pimpergunta4"
+            android:text="@string/pimpergunta5"
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
@@ -165,12 +190,12 @@
 
 
         <TextView
-            android:id="@+id/question5"
+            android:id="@+id/question6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/pimpergunta5"
+            android:text="@string/pimpergunta6"
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
@@ -211,12 +236,12 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/question6"
+            android:id="@+id/question7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/pimpergunta6"
+            android:text="@string/pimpergunta7"
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
@@ -257,12 +282,12 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/question7"
+            android:id="@+id/question8"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/pimpergunta7"
+            android:text="@string/pimpergunta8"
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
@@ -303,12 +328,12 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/question8"
+            android:id="@+id/question9"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/pimpergunta8"
+            android:text="@string/pimpergunta9"
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />

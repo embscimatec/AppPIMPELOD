@@ -11,6 +11,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_pim.*
+import kotlin.math.abs
+import kotlin.math.exp
 
 const val EXTRA_MESSAGE = "com.ieeecimatec.pim2pelod2.MESSAGE"
 
@@ -30,6 +32,7 @@ class PIM : AppCompatActivity() {
     var baseDeExcesso = 1
     var paoInt = 1
     var pressaoSistolica = 1
+    var fio2 : Double = 0.0
 
 
 
@@ -127,31 +130,31 @@ class PIM : AppCompatActivity() {
 
     fun radio1(view : View){
         val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
-        Toast.makeText(applicationContext,"Reação das pupilas: ${radio.text}",
+        Toast.makeText(applicationContext,"Reação das pupilas: ${pupila}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio2(view : View){
         val radio: RadioButton = findViewById(diagnostico.checkedRadioButtonId)
-        Toast.makeText(applicationContext,"Alto risco: ${radio.text}",
+        Toast.makeText(applicationContext,"Alto risco: ${altoRisco}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio3(view : View){
         val radio: RadioButton = findViewById(ventilacaoMecanica.checkedRadioButtonId)
-        Toast.makeText(applicationContext,"Ventilação mecânica: ${radio.text}",
+        Toast.makeText(applicationContext,"Ventilação mecânica: ${ventilacao}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio4(view : View){
         val radio: RadioButton = findViewById(razaoEntrada.checkedRadioButtonId)
-        Toast.makeText(applicationContext,"Razão de entrada por cirurgia: ${radio.text}",
+        Toast.makeText(applicationContext,"Razão de entrada por cirurgia: ${razao}",
             Toast.LENGTH_SHORT).show()
     }
 
     fun radio5(view : View){
         val radio: RadioButton = findViewById(circulacaoExtracorporea.checkedRadioButtonId)
-        Toast.makeText(applicationContext,"Fez circulação: ${radio.text}",
+        Toast.makeText(applicationContext,"Fez circulação: ${circulacao}",
             Toast.LENGTH_SHORT).show()
     }
 
@@ -169,6 +172,14 @@ class PIM : AppCompatActivity() {
 
     }
 
+    fun getFiO2(){
+        val editTxt = findViewById<EditText>(R.id.FiO2)
+        val FiO2Txt = editTxt.text.toString()
+        fio2 = FiO2Txt.toDouble()
+        fio2 = fio2 / 100
+
+    }
+
     fun getBase(){
         val editTxt = findViewById<EditText>(R.id.baseExcesso)
         val baseTxt = editTxt.text.toString()
@@ -177,18 +188,26 @@ class PIM : AppCompatActivity() {
     }
 
     fun Resultado() : Double { //metodo de obtenção do resultado
-        val PIM2 : Double = ( (0.01395 * Math.abs(pressaoSistolica - 120)) + (3.0791 * pupila) + (0.2888 * (100 * paoInt)) +
-                (0.104 * Math.abs(baseDeExcesso)) + (1.3552 * ventilacao) + (-1.0244 * razao) - (-0.07507 * circulacao) +
+        val PIM2 : Double = ( (0.01395 * abs(pressaoSistolica - 120)) + (3.0791 * pupila) + (0.2888 * (100 * fio2/paoInt)) +
+                (0.104 * abs(baseDeExcesso)) + (1.3552 * ventilacao) + (-1.0244 * razao) - (-0.07507 * circulacao) +
                 (1.6829 * altoRisco) + (-1.5770 * baixoRisco) + (-4.8841) )
         val r = PIM2.toString()
         //Log.println(r)
 
+        /*Toast.makeText(applicationContext,"PIM2: ${PIM2}",
+            Toast.LENGTH_SHORT).show()*/
         /*Toast.makeText(applicationContext,"${PIM2} e ${Math.abs(baseDeExcesso)}",
             Toast.LENGTH_SHORT).show() */
 
-        val prob = (Math.exp(PIM2) / (1 + Math.exp(PIM2)) )
+        val denominador = (1 + exp(PIM2));
+        var prob = exp(PIM2);
+        //Toast.makeText(applicationContext,"Resultado: ${prob}%",
+          //  Toast.LENGTH_SHORT).show()
+        prob = prob/denominador
 
         val resul = prob * 100
+
+
 
         return resul
     }
@@ -200,7 +219,7 @@ class PIM : AppCompatActivity() {
         getPressao()
         getPaO2()
         getBase()
-
+        getFiO2()
 
 
         if(cont < 5){
@@ -209,23 +228,20 @@ class PIM : AppCompatActivity() {
         }
         else{
 
-            val resultado : Double = Resultado()
+            val resultado = Resultado()
             val resultadoStr = resultado.toString()
 
-            txtResultado.text = "A probabilidade de morte é ${resultado}"
+            txtResultado.text = "A probabilidade de morte é ${resultadoStr}"
 
-            Toast.makeText(applicationContext, "${resultadoStr} e ${resultado}",
-                Toast.LENGTH_SHORT).show()
+            //Toast.makeText(applicationContext, "${resultadoStr} e ${resultado}",
+               // Toast.LENGTH_SHORT).show()
 
-
-
-            val rep = "oi"
 
             val intent = Intent(this, splash_calculando::class.java)
-            intent.putExtra("resultado", resultado)
+            //intent.putExtra("resultado", resultado)
 
             //passando o valor do resultado para a outra página
-            startActivity(intent)
+            //startActivity(intent)
 
         }
     }
