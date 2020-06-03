@@ -29,9 +29,10 @@ class PIM : AppCompatActivity() {
     var circulacao : Int = 0
     var altoRisco : Int = 0
     var baixoRisco : Int = 0
-    var baseDeExcesso = 1
-    var paoInt = 1
-    var pressaoSistolica = 1
+    var admissao : Int = 0
+    var baseDeExcesso : Double = 0.0
+    var paoInt : Double = 0.0
+    var pressaoSistolica : Double = 0.0
     var fio2 : Double = 0.0
 
 
@@ -69,14 +70,9 @@ class PIM : AppCompatActivity() {
 
                     baixoRisco = 1
                 }
-                cont++;
+
                 //podeCalcular = true;
             })
-
-        /*if(!Pao2.isSelected()){
-            podeCalcular = false;
-        }*/
-
 
         ventilacaoMecanica.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
@@ -87,9 +83,7 @@ class PIM : AppCompatActivity() {
                 cont++;
                 //podeCalcular = true;
             })
-        /*if(!ventilacaoMecanica.isSelected()){
-            podeCalcular = false;
-        }*/
+
 
         razaoEntrada.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
@@ -98,11 +92,7 @@ class PIM : AppCompatActivity() {
                     razao = 1;
                 }
                 cont++
-                //podeCalcular = true;
             })
-        /*if(!razaoEntrada.isSelected()){
-            podeCalcular = false;
-        }*/
 
         circulacaoExtracorporea.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
@@ -111,22 +101,19 @@ class PIM : AppCompatActivity() {
                     circulacao = 1;
                 }
                 cont++
-                //podeCalcular = true;
+
             })
-        /*if(!circulacaoExtracorporea.isSelected()){
-            podeCalcular = false;
-        }*/
+
+        admissaoEletiva.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                if (R.id.admissaoSim == checkedId) {
+                    admissao = 1;
+                }
+                cont++
+            }
+        )
     }
-
-    /*fun recebePressao(view : View){
-        val pressao = findViewById<EditText>(R.id.pressao)
-        pressaoSistolica = pressao.text.toString()
-        if (pressaoSistolica != "") {
-            Toast.makeText(applicationContext,"FOI!! ${pressaoSistolica}mmHg",
-                Toast.LENGTH_SHORT).show()
-        }
-
-    }*/
 
     fun radio1(view : View){
         val radio: RadioButton = findViewById(reacaoPupila.checkedRadioButtonId)
@@ -158,39 +145,45 @@ class PIM : AppCompatActivity() {
             Toast.LENGTH_SHORT).show()
     }
 
+    fun radio6(view : View){
+        val radio: RadioButton = findViewById(admissaoEletiva.checkedRadioButtonId)
+        Toast.makeText(applicationContext,"Admissão: ${admissao}",
+            Toast.LENGTH_SHORT).show()
+    }
+
     fun getPressao(){
         val editTxt = findViewById<EditText>(R.id.pressao)
         val pressaotxt = editTxt.text.toString()
-        pressaoSistolica = pressaotxt.toInt()
+        pressaoSistolica = pressaotxt.toDouble()
 
     }
 
     fun getPaO2(){
         val editTxt = findViewById<EditText>(R.id.PaO2)
         val PaO2Txt = editTxt.text.toString()
-        paoInt = PaO2Txt.toInt()
+        paoInt = PaO2Txt.toDouble()
 
     }
 
     fun getFiO2(){
         val editTxt = findViewById<EditText>(R.id.FiO2)
         val FiO2Txt = editTxt.text.toString()
-        fio2 = FiO2Txt.toDouble()
-        fio2 = fio2 / 100
+        val FIO2 : Double = FiO2Txt.toDouble()
+        fio2 = FIO2 / 100
 
     }
 
     fun getBase(){
         val editTxt = findViewById<EditText>(R.id.baseExcesso)
         val baseTxt = editTxt.text.toString()
-        baseDeExcesso = baseTxt.toInt()
+        baseDeExcesso = baseTxt.toDouble()
 
     }
 
     fun Resultado() : Double { //metodo de obtenção do resultado
         val PIM2 : Double = ( (0.01395 * abs(pressaoSistolica - 120)) + (3.0791 * pupila) + (0.2888 * (100 * fio2/paoInt)) +
-                (0.104 * abs(baseDeExcesso)) + (1.3552 * ventilacao) + (-1.0244 * razao) - (-0.07507 * circulacao) +
-                (1.6829 * altoRisco) + (-1.5770 * baixoRisco) + (-4.8841) )
+                (0.104 * abs(baseDeExcesso)) + (1.3352 * ventilacao) + (-1.0244 * razao) - (-0.7507 * circulacao) + (-0.9282 * admissao)
+                + (1.6829 * altoRisco) + (-1.5770 * baixoRisco) + (-4.8841) )
         val r = PIM2.toString()
         //Log.println(r)
 
@@ -206,9 +199,6 @@ class PIM : AppCompatActivity() {
         prob = prob/denominador
 
         val resul = prob * 100
-
-
-
         return resul
     }
 
@@ -223,7 +213,7 @@ class PIM : AppCompatActivity() {
 
 
         if(cont < 5){
-            Toast.makeText(applicationContext,"Você não respondeu todas as perguntas! Pressao = ${pressaoSistolica}  PaO2 = ${paoInt} Base = ${baseDeExcesso}",
+            Toast.makeText(applicationContext,"Você não respondeu todas as perguntas necessárias!",
                 Toast.LENGTH_SHORT).show()
         }
         else{
@@ -238,10 +228,10 @@ class PIM : AppCompatActivity() {
 
 
             val intent = Intent(this, splash_calculando::class.java)
-            //intent.putExtra("resultado", resultado)
+            intent.putExtra("resultado", resultado)
 
             //passando o valor do resultado para a outra página
-            //startActivity(intent)
+            startActivity(intent)
 
         }
     }

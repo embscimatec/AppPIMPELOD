@@ -13,6 +13,6 @@ class Resultado : AppCompatActivity() {
 
         val resultado : Double = intent.getSerializableExtra("resultado") as Double
 
-        textView.text = resultado.toString()
+        textView.text = "${resultado.toString()}%"
     }
 }

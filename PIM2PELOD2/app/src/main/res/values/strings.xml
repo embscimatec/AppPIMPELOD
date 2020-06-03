@@ -23,6 +23,7 @@
     <string name="pimpergunta7">Ventilação mecânica</string>
     <string name="pimpergunta8">Recuperação cirúrgica ou de procedimento como principal razão de entrada</string>
     <string name="pimpergunta9">Admissão após circulação extracorpórea</string>
+    <string name="pimpergunta10">Admissão eletiva</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
 
