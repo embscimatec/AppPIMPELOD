@@ -5,20 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toolbar
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.navigation.Navigation.findNavController
-import com.ieeecimatec.pim2pelod2.Ficha_paciente
-import com.ieeecimatec.pim2pelod2.MainActivity
-import com.ieeecimatec.pim2pelod2.PIM
-import com.ieeecimatec.pim2pelod2.R
-import kotlinx.android.synthetic.main.fragment_gallery.*
+import com.ieeecimatec.pim2pelod2.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.*
-import kotlinx.android.synthetic.main.fragment_gallery.view.buttonPIM
-import kotlinx.android.synthetic.main.fragment_gallery.view.buttonPELOD
 
 
 class GalleryFragment : Fragment() {
@@ -30,14 +19,14 @@ class GalleryFragment : Fragment() {
 
 
                 view.buttonPIM.setOnClickListener{ view ->
-            val intent = Intent (this.context, Ficha_paciente::class.java )
-                    intent.putExtra("escolha", 1)
-            startActivity(intent)
+            val pagina = Intent (this.context, Ficha_paciente::class.java )
+
+            startActivity(pagina)
         }
                 view.buttonPELOD.setOnClickListener{ view ->
-            val intent = Intent (this.context, Ficha_paciente::class.java )
-                    intent.putExtra("escolha", 0)
-            startActivity(intent)
+            val pagina = Intent (this.context, Ficha_paciente_PELOD::class.java )
+
+            startActivity(pagina)
         }
 
         return view
@@ -45,6 +34,11 @@ class GalleryFragment : Fragment() {
 
     fun clickPIM (view : View){ //esse método nao está funcionando
         val intent = Intent (this.context, Ficha_paciente::class.java )
+        startActivity(intent)
+    }
+
+    fun clickPELOD (view : View){ //esse método nao está funcionando
+        val intent = Intent (this.context, Ficha_paciente_PELOD::class.java )
         startActivity(intent)
     }
 

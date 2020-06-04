@@ -11,6 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Ficha_paciente"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ficha_paciente_PELOD"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Resultado" />
         <activity
             android:name=".splash_calculando"

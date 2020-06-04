@@ -14,7 +14,7 @@ import java.util.*
 import java.util.Calendar.DAY_OF_YEAR
 import java.util.Calendar.YEAR
 
-class Ficha_paciente : AppCompatActivity() {
+class Ficha_paciente_PELOD : AppCompatActivity() {
 
     var nome_paciente = ""
     var idade : Int = 0
@@ -77,8 +77,16 @@ class Ficha_paciente : AppCompatActivity() {
 
     fun onContinuarPressed(view : View){ //chama a próxima tela (1 para PIM, 0 para PELOD)
 
-            val intent = Intent (this, PIM::class.java )
-            startActivity(intent)
+            if(meses == 0){
+                val msg = "Você não marcou a data de nascimento!"
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val intent = Intent (this, PELOD::class.java )
+                intent.putExtra("meses", meses)
+                startActivity(intent)
+            }
+
 
     }
 }

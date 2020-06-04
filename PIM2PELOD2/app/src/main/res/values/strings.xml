@@ -37,9 +37,11 @@
     <string name="pelodpergunta4">Lactatemia:</string>
     <string name="pelodpergunta5">Pressão Arterial Média:</string>
     <string name="pelodpergunta7">Creatinina:</string>
-    <string name="pelodpergunta8">PaCO2:</string>
+    <string name="pelodpergunta8">PaCO<sub>2</sub>:</string>
     <string name="pelodpergunta9">Números de Glóbulos Brancos no Sangue:</string>
     <string name="pelodpergunta10">Plaquetas:</string>
+
+    <string name="hintGlobulosBrancos"><sub>x</sub> 10<sub>9</sub>/L</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"

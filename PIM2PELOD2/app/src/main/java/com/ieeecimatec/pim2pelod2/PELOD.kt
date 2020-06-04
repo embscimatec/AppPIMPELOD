@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_pelod.*
+import javax.xml.transform.dom.DOMLocator
 import kotlin.math.exp
 
 class PELOD : AppCompatActivity() {
@@ -16,22 +17,24 @@ class PELOD : AppCompatActivity() {
     var cont : Int = 0 //esse contador vai fazer a verificação dos radioGrups marcados
     var pupila : Int = 5
     var ventilacao : Int = 0
-    var glasInt = 1
-    var paoInt = 1
+    var glasInt : Int = 1
+    var pao : Double = 0.0
+    var fio2 : Double = 0.0
     var lactaInt : Int = 1
     var lactaFloat : Double = 1.0
     var creaInt : Int = 1
     var paco2Int : Int = 1
     var globInt : Int = 1
     var plaqInt : Int = 1
-    var pressao : Int = 0
+    var pressao : Double = 0.0
+    var pressaoInt : Int = 0;
     val meses : Int = intent.getSerializableExtra("meses") as Int
-
+    var eficiencia : Double = 0.0
+    var eficienciaInt : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pelod)
-
 
         //radioButton da reação da pupila
         reacaoPupila.setOnCheckedChangeListener(
@@ -41,10 +44,8 @@ class PELOD : AppCompatActivity() {
                     pupila = 0;
                 }
                 cont++
-                // podeCalcular = true;
             })
-
-
+        //radioButton ventilacao mecanica
         ventilacaoMecanica.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
                 val radio: RadioButton = findViewById(checkedId)
@@ -72,11 +73,11 @@ class PELOD : AppCompatActivity() {
     fun getGlasglow(){
         val editTxt = findViewById<EditText>(R.id.Glasglow)
         val glasglow = editTxt.text.toString()
-        glasInt = glasglow.toInt()
+        val glas : Double = glasglow.toDouble()
 
-        if(glasInt >= 11){
+        if(glas >= 11){
             glasInt = 0
-        } else if (glasInt in 5..10) {
+        } else if (glas in 5..10) {
             glasInt = 1
         } else {
             glasInt = 4
@@ -86,11 +87,24 @@ class PELOD : AppCompatActivity() {
     fun getPaO2(){
         val editTxt = findViewById<EditText>(R.id.PaO2)
         val PaO2Txt = editTxt.text.toString()
-        paoInt = PaO2Txt.toInt()
-        if (paoInt >= 61) {
-            paoInt = 0
-        } else {
-            paoInt = 2
+        pao = PaO2Txt.toDouble()
+    }
+
+    fun getFiO2(){
+        val editTxt = findViewById<EditText>(R.id.FiO2)
+        val FiO2Txt = editTxt.text.toString()
+        val FIO2 : Double = FiO2Txt.toDouble()
+        fio2 = FIO2 / 100
+
+    }
+
+    fun getEficiencia(){
+        eficiencia = (fio2/pao)*100
+        if (eficiencia >= 61) {
+            eficienciaInt = 0
+        }
+        else{
+            eficienciaInt = 2
         }
     }
 
@@ -112,10 +126,10 @@ class PELOD : AppCompatActivity() {
     fun getCreatinina(){
         val editTxt = findViewById<EditText>(R.id.Creatina)
         val baseTxt = editTxt.text.toString()
-        creaInt = baseTxt.toInt()
+        val creatina : Double = baseTxt.toDouble()
 
         if (meses < 1){
-            if (creaInt <= 69){
+            if (creatina <= 69){
                 creaInt = 0
             } else {
                 creaInt = 2
@@ -123,7 +137,7 @@ class PELOD : AppCompatActivity() {
 
         } else if (meses in 1..11) {
 
-            if (creaInt <= 22){
+            if (creatina <= 22){
                 creaInt = 0
             } else {
                 creaInt = 2
@@ -131,7 +145,7 @@ class PELOD : AppCompatActivity() {
 
         } else if (meses in 12..23) {
 
-            if (creaInt <= 34){
+            if (creatina <= 34){
                 creaInt = 0
             } else {
                 creaInt = 2
@@ -139,7 +153,7 @@ class PELOD : AppCompatActivity() {
 
         } else if (meses in 24..59) {
 
-            if (creaInt <= 50){
+            if (creatina <= 50){
                 creaInt = 0
             } else {
                 creaInt = 2
@@ -147,7 +161,7 @@ class PELOD : AppCompatActivity() {
 
         } else if (meses in 60..143) {
 
-            if (creaInt <= 58){
+            if (creatina <= 58){
                 creaInt = 0
             } else {
                 creaInt = 2
@@ -155,7 +169,7 @@ class PELOD : AppCompatActivity() {
 
         } else {
 
-            if (creaInt <= 92){
+            if (creatina <= 92){
                 creaInt = 0
             } else {
                 creaInt = 2
@@ -167,83 +181,82 @@ class PELOD : AppCompatActivity() {
     fun getPressao(){
         val editTxt = findViewById<EditText>(R.id.pressaoArt)
         val baseTxt = editTxt.text.toString()
-        pressao = baseTxt.toInt()
+        pressao = baseTxt.toDouble()
 
         if (meses < 1){
             if (pressao >= 46){
-                pressao = 0
+                pressaoInt = 0
             } else if (pressao in 31..45) {
-                pressao = 2
+                pressaoInt = 2
             } else if (pressao in 17..30) {
-                pressao = 3
+                pressaoInt = 3
             } else {
-                pressao = 6
+                pressaoInt = 6
             }
         } else if (meses in 1..11) {
 
             if (pressao >= 55){
-                pressao = 0
+                pressaoInt = 0
             } else if (pressao in 39..54) {
-                pressao = 2
+                pressaoInt = 2
             } else if (pressao in 25..38) {
-                pressao = 3
+                pressaoInt = 3
             } else {
-                pressao = 6
+                pressaoInt = 6
             }
         } else if (meses in 12..23) {
             if (pressao >= 60){
-                pressao = 0
+                pressaoInt = 0
             } else if (pressao in 44..59) {
-                pressao = 2
+                pressaoInt = 2
             } else if (pressao in 31..43) {
-                pressao = 3
+                pressaoInt = 3
             } else {
-                pressao = 6
+                pressaoInt = 6
             }
         } else if (meses in 24..59) {
             if (pressao >= 62){
-                pressao = 0
+                pressaoInt = 0
             } else if (pressao in 46..61) {
-                pressao = 2
+                pressaoInt = 2
             } else if (pressao in 32..44) {
-                pressao = 3
+                pressaoInt = 3
             } else {
-                pressao = 6
+                pressaoInt = 6
             }
         } else if (meses in 60..143) {
 
             if (pressao >= 65){
-                pressao = 0
+                pressaoInt = 0
             } else if (pressao in 49..64) {
-                pressao = 2
+                pressaoInt = 2
             } else if (pressao in 36..48) {
-                pressao = 3
+                pressaoInt = 3
             } else {
-                pressao = 6
+                pressaoInt = 6
             }
         } else {
             if (pressao >= 67){
-                pressao = 0
+                pressaoInt = 0
             } else if (pressao in 52..66) {
-                pressao = 2
+                pressaoInt = 2
             } else if (pressao in 38..51) {
-                pressao = 3
+                pressaoInt = 3
             } else {
-                pressao = 6
+                pressaoInt = 6
             }
         }
-
 
     }
 
     fun getPaCO2(){
         val editTxt = findViewById<EditText>(R.id.PaCO2)
         val PaCO2Txt = editTxt.text.toString()
-        paco2Int = PaCO2Txt.toInt()
+        val paco2 : Double = PaCO2Txt.toDouble()
 
-        if (paco2Int >= 95){
+        if (paco2 >= 95){
             paco2Int = 3
-        } else if (paco2Int in 59..94){
+        } else if (paco2 in 59..94){
             paco2Int = 1
         } else {
             paco2Int = 0
@@ -254,9 +267,9 @@ class PELOD : AppCompatActivity() {
     fun getGlob(){
         val editTxt = findViewById<EditText>(R.id.globulosBrancos)
         val GlobTxt = editTxt.text.toString()
-        globInt = GlobTxt.toInt()
+        val glob : Double = GlobTxt.toDouble()
 
-        if (globInt > 2) {
+        if (glob > 2) {
             globInt = 0
         } else {
             globInt = 2
@@ -266,11 +279,11 @@ class PELOD : AppCompatActivity() {
     fun getPlaq(){
         val editTxt = findViewById<EditText>(R.id.Plaquetas)
         val PlaqTxt = editTxt.text.toString()
-        plaqInt = PlaqTxt.toInt()
+        val plaq = PlaqTxt.toDouble()
 
-        if (plaqInt >= 142) {
+        if (plaq >= 142) {
             plaqInt = 0
-        } else if (plaqInt in 77..141) {
+        } else if (plaq in 77..141) {
             plaqInt = 1
         } else {
             plaqInt = 2
@@ -279,13 +292,13 @@ class PELOD : AppCompatActivity() {
     }
 
     fun Resultado() : Double { //metodo de obtenção do resultado
-        val PELOD2 : Int = (glasInt + pupila + lactaInt + pressao + creaInt + paoInt + globInt + plaqInt)
+        val PELOD2  = (glasInt + pupila + lactaInt + pressaoInt + creaInt + eficienciaInt + globInt + plaqInt)
         //val r = PELOD2.toString()
         var logit = -6.61 + (0.47 * PELOD2)
         logit *= -1
 
         val denominador = 1 + exp(logit)
-        val prob = 1/denominador
+        val prob : Double = 1/denominador
 
         return prob * 100
     }
@@ -299,11 +312,15 @@ class PELOD : AppCompatActivity() {
         getPressao()
         getCreatinina()
         getPaO2()
+        getFiO2()
+        getEficiencia() //metodo que calcula FiO2/PaO2 (%)
         getPaCO2()
         getGlob()
         getPlaq()
 
-        if(cont < 5){
+
+
+        if(cont < 2){
             Toast.makeText(applicationContext,"Você não respondeu todas as perguntas!",
                 Toast.LENGTH_SHORT).show()
         }
