@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azulEscuro"
-    tools:context=".PIM">
+    tools:context=".PELOD">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
 
 
         <EditText
-            android:id="@+id/pressao"
+            android:id="@+id/Glasglow"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/branco"
@@ -108,8 +108,7 @@
                 android:buttonTint="@color/cinzaEscuro"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="50dp"
-               android:id="@+id/Reacaosim"
-                />
+                android:id="@+id/Reacaosim" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,8 +122,6 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/Reacaonao"
                 />
-
-
         </RadioGroup>
 
 
@@ -139,15 +136,8 @@
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
 
-        <RadioGroup
-            android:id="@+id/Pao2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"/>
-
         <EditText
-            android:id="@+id/PaO2"
+            android:id="@+id/Lactatemia"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/branco"
@@ -172,15 +162,8 @@
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
 
-        <RadioGroup
-            android:id="@+id/baseExcesso"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
             <EditText
-                android:id="@+id/PaO2"
+                android:id="@+id/pressaoArt"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@color/branco"
@@ -194,8 +177,6 @@
                 android:textColor="@color/preto"
                 android:hint="(mmHg)" />
 
-        </RadioGroup>
-
         <TextView
             android:id="@+id/question6"
             android:layout_width="wrap_content"
@@ -206,17 +187,17 @@
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
+
         <RadioGroup
             android:id="@+id/ventilacaoMecanica"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center_horizontal">
-
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio4"
+                android:onClick="radio2"
                 android:text="@string/sim"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -230,7 +211,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="radio4"
+                android:onClick="radio2"
                 android:text="@string/nao"
                 android:shadowColor="@color/cinzaEscuro"
                 android:textColor="@color/branco"
@@ -252,15 +233,9 @@
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
-        <RadioGroup
-            android:id="@+id/razaoEntrada"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
 
             <EditText
-                android:id="@+id/PaO2"
+                android:id="@+id/Creatina"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@color/branco"
@@ -274,8 +249,6 @@
                 android:textColor="@color/preto"
                 android:hint="(mg/dL)" />
 
-        </RadioGroup>
-
         <TextView
             android:id="@+id/question8"
             android:layout_width="wrap_content"
@@ -286,15 +259,8 @@
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
-        <RadioGroup
-            android:id="@+id/circulacaoExtracorporea"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
             <EditText
-                android:id="@+id/PaO2"
+                android:id="@+id/PaCO2"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@color/branco"
@@ -309,7 +275,7 @@
                 android:hint="(mmHg)" />
 
         <TextView
-            android:id="@+id/question8"
+            android:id="@+id/question9"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -319,15 +285,9 @@
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
 
-        <RadioGroup
-            android:id="@+id/circulacaoExtracorporea"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
 
             <EditText
-                android:id="@+id/PaO2"
+                android:id="@+id/globulosBrancos"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@color/branco"
@@ -342,7 +302,7 @@
                 android:hint="(x 10ˆ9/L)" />
 
         <TextView
-            android:id="@+id/question8"
+            android:id="@+id/question10"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -351,15 +311,9 @@
             android:textSize="10pt"
             android:fontFamily="sans-serif"
             android:textColor="@color/branco" />
-        <RadioGroup
-            android:id="@+id/circulacaoExtracorporea"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
 
             <EditText
-                android:id="@+id/PaO2"
+                android:id="@+id/Plaquetas"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@color/branco"
@@ -374,22 +328,20 @@
                 android:hint="(x 10ˆ9/L)" />
 
 
-        </RadioGroup>
+<Button
+    android:id="@+id/buttonCalcular"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="clickCalcular"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center_horizontal"
+    android:text="Calcular"
+    android:textColor="@color/branco"
+    android:fontFamily="sans-serif"
+    android:textSize="14pt"
+    android:backgroundTint="@color/azulClaro"
+    />
 
-        <Button
-            android:id="@+id/buttonCalcular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="clickCalcular"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:text="Calcular"
-            android:textColor="@color/branco"
-            android:fontFamily="sans-serif"
-            android:textSize="14pt"
-            android:backgroundTint="@color/azulClaro"
-            />
+</LinearLayout>
 
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
