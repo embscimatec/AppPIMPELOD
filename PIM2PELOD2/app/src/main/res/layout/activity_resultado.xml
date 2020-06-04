@@ -15,5 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Tela do resultado!"
+        android:textSize="30dp"
          />
 </LinearLayout>
