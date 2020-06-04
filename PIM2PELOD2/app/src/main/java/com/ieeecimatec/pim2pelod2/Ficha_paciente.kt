@@ -16,11 +16,13 @@ import java.util.Calendar.YEAR
 class Ficha_paciente : AppCompatActivity() {
 
     var nome_paciente = ""
-    var idade : Int = 0;
+    var idade : Int = 0
+    var meses : Int = 0
     val hoje = Calendar.getInstance() //recebe a data atual
     @RequiresApi(Build.VERSION_CODES.O)
     //recebe a data mínima (idade maxima)
     val miniDate : Calendar = Calendar.Builder().setDate(hoje.get(Calendar.YEAR) - 16, hoje.get(Calendar.MONTH), hoje.get(Calendar.DAY_OF_MONTH)).build()
+    val escolha : Int = intent.getSerializableExtra("escolha") as Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +37,12 @@ class Ficha_paciente : AppCompatActivity() {
         ) { view, year, month, day ->
             val month = month + 1
             idade = getAge(month, year, day)
-            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos "
+            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e tem ${meses} meses de vida."
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
+
+
+
         val mes = date_Picker.month
         val ano = date_Picker.year
         val dia = date_Picker.dayOfMonth
@@ -45,12 +50,17 @@ class Ficha_paciente : AppCompatActivity() {
 
     fun getAge(mes : Int, ano : Int, dia : Int) : Int{ //retorna o valor da idade do paciente
         var age : Int = 0
-        if(mes < hoje.get(Calendar.MONTH) && dia < hoje.get(Calendar.DAY_OF_MONTH)){
+        if(mes <= hoje.get(Calendar.MONTH) && dia <= hoje.get(Calendar.DAY_OF_MONTH)){
             age = hoje.get(Calendar.YEAR)  - ano
+            meses = (age * 12) + (hoje.get(Calendar.MONTH) - mes)
         }
         else{
             age = hoje.get(Calendar.YEAR)- ano
             age -= 1
+            var extra = mes - hoje.get(Calendar.MONTH)
+            extra -= 12
+            meses = (age * 12) + extra
+
         }
         return age;
     }
@@ -64,8 +74,14 @@ class Ficha_paciente : AppCompatActivity() {
         this.finish()
     }
 
-    fun onContinuarPressed(view : View){ //chama a próxima tela: formulário PIM
-        val intent = Intent (this, PIM::class.java )
-        startActivity(intent)
+    fun onContinuarPressed(view : View){ //chama a próxima tela (1 para PIM, 0 para PELOD)
+        if (escolha == 1){
+            val intent = Intent (this, PIM::class.java )
+            startActivity(intent)
+        } else {
+            val intent = Intent (this, PELOD::class.java )
+            intent.putExtra("meses", meses)
+            startActivity(intent)
+        }
     }
 }

@@ -18,6 +18,7 @@ import com.ieeecimatec.pim2pelod2.R
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.buttonPIM
+import kotlinx.android.synthetic.main.fragment_gallery.view.buttonPELOD
 
 
 class GalleryFragment : Fragment() {
@@ -30,6 +31,12 @@ class GalleryFragment : Fragment() {
 
                 view.buttonPIM.setOnClickListener{ view ->
             val intent = Intent (this.context, Ficha_paciente::class.java )
+                    intent.putExtra("escolha", 1)
+            startActivity(intent)
+        }
+                view.buttonPELOD.setOnClickListener{ view ->
+            val intent = Intent (this.context, Ficha_paciente::class.java )
+                    intent.putExtra("escolha", 0)
             startActivity(intent)
         }
 
@@ -40,6 +47,7 @@ class GalleryFragment : Fragment() {
         val intent = Intent (this.context, Ficha_paciente::class.java )
         startActivity(intent)
     }
+
 
     fun onBackPressed(view: View){
         val int = Intent(this.context, MainActivity::class.java)

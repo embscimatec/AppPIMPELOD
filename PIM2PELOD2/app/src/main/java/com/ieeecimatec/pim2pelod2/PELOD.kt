@@ -25,12 +25,12 @@ class PELOD : AppCompatActivity() {
     var globInt : Int = 1
     var plaqInt : Int = 1
     var pressao : Int = 0
-
+    val meses : Int = intent.getSerializableExtra("meses") as Int
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pim)
+        setContentView(R.layout.activity_pelod)
 
 
         //radioButton da reação da pupila
@@ -49,7 +49,7 @@ class PELOD : AppCompatActivity() {
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
                 val radio: RadioButton = findViewById(checkedId)
                 if (R.id.ventilacaosim == checkedId) {
-                    ventilacao = 1;
+                    ventilacao = 3;
                 }
                 cont++;
                 //podeCalcular = true;
@@ -114,12 +114,125 @@ class PELOD : AppCompatActivity() {
         val baseTxt = editTxt.text.toString()
         creaInt = baseTxt.toInt()
 
+        if (meses < 1){
+            if (creaInt <= 69){
+                creaInt = 0
+            } else {
+                creaInt = 2
+            }
+
+        } else if (meses in 1..11) {
+
+            if (creaInt <= 22){
+                creaInt = 0
+            } else {
+                creaInt = 2
+            }
+
+        } else if (meses in 12..23) {
+
+            if (creaInt <= 34){
+                creaInt = 0
+            } else {
+                creaInt = 2
+            }
+
+        } else if (meses in 24..59) {
+
+            if (creaInt <= 50){
+                creaInt = 0
+            } else {
+                creaInt = 2
+            }
+
+        } else if (meses in 60..143) {
+
+            if (creaInt <= 58){
+                creaInt = 0
+            } else {
+                creaInt = 2
+            }
+
+        } else {
+
+            if (creaInt <= 92){
+                creaInt = 0
+            } else {
+                creaInt = 2
+            }
+        }
+
     }
 
     fun getPressao(){
         val editTxt = findViewById<EditText>(R.id.pressaoArt)
         val baseTxt = editTxt.text.toString()
         pressao = baseTxt.toInt()
+
+        if (meses < 1){
+            if (pressao >= 46){
+                pressao = 0
+            } else if (pressao in 31..45) {
+                pressao = 2
+            } else if (pressao in 17..30) {
+                pressao = 3
+            } else {
+                pressao = 6
+            }
+        } else if (meses in 1..11) {
+
+            if (pressao >= 55){
+                pressao = 0
+            } else if (pressao in 39..54) {
+                pressao = 2
+            } else if (pressao in 25..38) {
+                pressao = 3
+            } else {
+                pressao = 6
+            }
+        } else if (meses in 12..23) {
+            if (pressao >= 60){
+                pressao = 0
+            } else if (pressao in 44..59) {
+                pressao = 2
+            } else if (pressao in 31..43) {
+                pressao = 3
+            } else {
+                pressao = 6
+            }
+        } else if (meses in 24..59) {
+            if (pressao >= 62){
+                pressao = 0
+            } else if (pressao in 46..61) {
+                pressao = 2
+            } else if (pressao in 32..44) {
+                pressao = 3
+            } else {
+                pressao = 6
+            }
+        } else if (meses in 60..143) {
+
+            if (pressao >= 65){
+                pressao = 0
+            } else if (pressao in 49..64) {
+                pressao = 2
+            } else if (pressao in 36..48) {
+                pressao = 3
+            } else {
+                pressao = 6
+            }
+        } else {
+            if (pressao >= 67){
+                pressao = 0
+            } else if (pressao in 52..66) {
+                pressao = 2
+            } else if (pressao in 38..51) {
+                pressao = 3
+            } else {
+                pressao = 6
+            }
+        }
+
 
     }
 
@@ -199,7 +312,7 @@ class PELOD : AppCompatActivity() {
             val resultado : Double = Resultado()
             val resultadoStr = resultado.toString()
 
-            Toast.makeText(applicationContext,"Indo para a próxima página... Pressao = ${pressaoSistolica} PaO2 = ${paoInt} Base ${baseDeExcesso}" +
+            Toast.makeText(applicationContext,"Indo para a próxima página..." +
                     "${resultadoStr} e ${resultado}",
                 Toast.LENGTH_SHORT).show()
 
