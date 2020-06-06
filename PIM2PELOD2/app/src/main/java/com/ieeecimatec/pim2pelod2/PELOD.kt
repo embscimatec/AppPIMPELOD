@@ -28,7 +28,7 @@ class PELOD : AppCompatActivity() {
     var plaqInt : Int = 1
     var pressao : Double = 0.0
     var pressaoInt : Int = 0;
-    val meses : Int = intent.getSerializableExtra("meses") as Int
+    //val meses : Int = intent.getSerializableExtra("meses") as Int
     var eficiencia : Double = 0.0
     var eficienciaInt : Int = 0
 
@@ -77,7 +77,7 @@ class PELOD : AppCompatActivity() {
 
         if(glas >= 11){
             glasInt = 0
-        } else if (glas in 5..10) {
+        } else if (glas in 5.0..10.0) {
             glasInt = 1
         } else {
             glasInt = 4
@@ -122,7 +122,7 @@ class PELOD : AppCompatActivity() {
         }
 
     }
-
+/*
     fun getCreatinina(){
         val editTxt = findViewById<EditText>(R.id.Creatina)
         val baseTxt = editTxt.text.toString()
@@ -186,9 +186,9 @@ class PELOD : AppCompatActivity() {
         if (meses < 1){
             if (pressao >= 46){
                 pressaoInt = 0
-            } else if (pressao in 31..45) {
+            } else if (pressao in 31.0..45.0) {
                 pressaoInt = 2
-            } else if (pressao in 17..30) {
+            } else if (pressao in 17.0..30.0) {
                 pressaoInt = 3
             } else {
                 pressaoInt = 6
@@ -197,9 +197,9 @@ class PELOD : AppCompatActivity() {
 
             if (pressao >= 55){
                 pressaoInt = 0
-            } else if (pressao in 39..54) {
+            } else if (pressao in 39.0..54.0) {
                 pressaoInt = 2
-            } else if (pressao in 25..38) {
+            } else if (pressao in 25.0..38.0) {
                 pressaoInt = 3
             } else {
                 pressaoInt = 6
@@ -207,9 +207,9 @@ class PELOD : AppCompatActivity() {
         } else if (meses in 12..23) {
             if (pressao >= 60){
                 pressaoInt = 0
-            } else if (pressao in 44..59) {
+            } else if (pressao in 44.0..59.0){
                 pressaoInt = 2
-            } else if (pressao in 31..43) {
+            } else if (pressao in 31.0..43.0) {
                 pressaoInt = 3
             } else {
                 pressaoInt = 6
@@ -217,9 +217,9 @@ class PELOD : AppCompatActivity() {
         } else if (meses in 24..59) {
             if (pressao >= 62){
                 pressaoInt = 0
-            } else if (pressao in 46..61) {
+            } else if (pressao in 46.0..61.0) {
                 pressaoInt = 2
-            } else if (pressao in 32..44) {
+            } else if (pressao in 32.0..44.0) {
                 pressaoInt = 3
             } else {
                 pressaoInt = 6
@@ -228,9 +228,9 @@ class PELOD : AppCompatActivity() {
 
             if (pressao >= 65){
                 pressaoInt = 0
-            } else if (pressao in 49..64) {
+            } else if (pressao in 49.0..64.0) {
                 pressaoInt = 2
-            } else if (pressao in 36..48) {
+            } else if (pressao in 36.0..48.0) {
                 pressaoInt = 3
             } else {
                 pressaoInt = 6
@@ -238,16 +238,18 @@ class PELOD : AppCompatActivity() {
         } else {
             if (pressao >= 67){
                 pressaoInt = 0
-            } else if (pressao in 52..66) {
+            } else if (pressao in 52.0..66.0) {
                 pressaoInt = 2
-            } else if (pressao in 38..51) {
+            } else if (pressao in 38.0..51.0) {
                 pressaoInt = 3
             } else {
                 pressaoInt = 6
             }
         }
 
+
     }
+    */
 
     fun getPaCO2(){
         val editTxt = findViewById<EditText>(R.id.PaCO2)
@@ -256,7 +258,7 @@ class PELOD : AppCompatActivity() {
 
         if (paco2 >= 95){
             paco2Int = 3
-        } else if (paco2 in 59..94){
+        } else if (paco2 in 59.0..94.0){
             paco2Int = 1
         } else {
             paco2Int = 0
@@ -283,7 +285,7 @@ class PELOD : AppCompatActivity() {
 
         if (plaq >= 142) {
             plaqInt = 0
-        } else if (plaq in 77..141) {
+        } else if (plaq in 77.0..141.0) {
             plaqInt = 1
         } else {
             plaqInt = 2
@@ -309,8 +311,8 @@ class PELOD : AppCompatActivity() {
         // métodos que recebem valores dos EditTexts
         getGlasglow()
         getLacta()
-        getPressao()
-        getCreatinina()
+        //getPressao()
+        //getCreatinina()
         getPaO2()
         getFiO2()
         getEficiencia() //metodo que calcula FiO2/PaO2 (%)
@@ -335,7 +337,7 @@ class PELOD : AppCompatActivity() {
 
 
 
-            val rep = "oi"
+            //val rep = "oi"
 
             val intent = Intent(this, splash_calculando::class.java)
             intent.putExtra("resultado", resultado)

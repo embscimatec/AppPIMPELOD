@@ -53,7 +53,7 @@
         android:layout_height="55dp"
         android:layout_margin="100px"
         android:background="@color/azulClaro"
-        android:left="@id/buttonPIM"
+        android:left="@id/buttonPELOD"
         android:text="PELOD2"
         android:textAlignment="center"
         android:textColor="@color/branco"

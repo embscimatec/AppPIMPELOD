@@ -2,32 +2,30 @@ package com.ieeecimatec.pim2pelod2
 
 import android.content.Intent
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import com.ieeecimatec.pim2pelod2.ui.gallery.GalleryFragment
 import java.util.*
-import java.util.Calendar.DAY_OF_YEAR
-import java.util.Calendar.YEAR
 
-class Ficha_paciente_PELOD : AppCompatActivity() {
+class Ficha_paciente_pim : AppCompatActivity() {
 
     var nome_paciente = ""
     var idade : Int = 0
-    var meses : Int = 60
+    var meses : Int = 0
     val hoje = Calendar.getInstance() //recebe a data atual
     @RequiresApi(Build.VERSION_CODES.O)
     //recebe a data mínima (idade maxima)
-    val miniDate : Calendar = Calendar.Builder().setDate(hoje.get(Calendar.YEAR) - 16, hoje.get(Calendar.MONTH), hoje.get(Calendar.DAY_OF_MONTH)).build()
+    val miniDate : Calendar = Calendar.Builder().setDate(hoje.get(Calendar.YEAR) - 16, hoje.get(
+        Calendar.MONTH), hoje.get(Calendar.DAY_OF_MONTH)).build()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_paciente_pelod)
+        setContentView(R.layout.activity_ficha_paciente_pim)
         val date_Picker = findViewById<DatePicker>(R.id.datePicker)
         //date_Picker.setDatePickerFormat("DMY");
         date_Picker.maxDate = Calendar.getInstance().timeInMillis  //maior data possivel
@@ -53,14 +51,14 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
         var age : Int = 0
         if(mes <= hoje.get(Calendar.MONTH) && dia <= hoje.get(Calendar.DAY_OF_MONTH)){
             age = hoje.get(Calendar.YEAR)  - ano
-            //meses = (age * 12) + (hoje.get(Calendar.MONTH) - mes)
+            meses = (age * 12) + (hoje.get(Calendar.MONTH) - mes)
         }
         else{
             age = hoje.get(Calendar.YEAR)- ano
             age -= 1
             var extra = mes - hoje.get(Calendar.MONTH)
             extra -= 12
-            //meses = (age * 12) + extra
+            meses = (age * 12) + extra
 
         }
         return age;
@@ -77,16 +75,12 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
 
     fun onContinuarPressed(view : View){ //chama a próxima tela (1 para PIM, 0 para PELOD)
 
-            if(meses == 0){
-                val msg = "Você não marcou a data de nascimento!"
-                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-            }
-            else {
-                val intent = Intent (this, PELOD::class.java )
-                intent.putExtra("meses", meses)
-                startActivity(intent)
-            }
-
+        val intent = Intent (this, PIM::class.java )
+        startActivity(intent)
 
     }
+
+
+
+
 }

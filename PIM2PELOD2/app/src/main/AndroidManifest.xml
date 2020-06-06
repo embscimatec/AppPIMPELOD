@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ficha_paciente"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Ficha_paciente_PELOD"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ficha_paciente_pim"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Ficha_paciente"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Ficha_paciente_PELOD"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Resultado" />
         <activity
             android:name=".splash_calculando"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PELOD"></activity>
+        <activity android:name=".PELOD" />
         <activity
             android:name=".PIM"
             android:label="@string/title_activity_p_i_m"

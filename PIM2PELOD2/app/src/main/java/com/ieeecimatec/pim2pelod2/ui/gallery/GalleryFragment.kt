@@ -19,7 +19,7 @@ class GalleryFragment : Fragment() {
 
 
                 view.buttonPIM.setOnClickListener{ view ->
-            val pagina = Intent (this.context, Ficha_paciente::class.java )
+            val pagina = Intent (this.context, Ficha_paciente_pim::class.java )
 
             startActivity(pagina)
         }
@@ -33,7 +33,7 @@ class GalleryFragment : Fragment() {
     }
 
     fun clickPIM (view : View){ //esse método nao está funcionando
-        val intent = Intent (this.context, Ficha_paciente::class.java )
+        val intent = Intent (this.context, Ficha_paciente_pim::class.java )
         startActivity(intent)
     }
 
