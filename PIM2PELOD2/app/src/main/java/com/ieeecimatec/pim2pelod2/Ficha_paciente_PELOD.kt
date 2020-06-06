@@ -18,7 +18,7 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
 
     var nome_paciente = ""
     var idade : Int = 0
-    var meses : Int = 60
+    var mesesPaciente : Int = 0
     val hoje = Calendar.getInstance() //recebe a data atual
     @RequiresApi(Build.VERSION_CODES.O)
     //recebe a data mínima (idade maxima)
@@ -36,9 +36,9 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
             hoje.get(Calendar.DAY_OF_MONTH)
 
         ) { view, year, month, day ->
-            val month = month + 1
             idade = getAge(month, year, day)
-            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e ${meses} meses"
+            mesesPaciente = getMeses(month, year, day)
+            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e ${mesesPaciente} meses"
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
 
@@ -50,20 +50,29 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
     }
 
     fun getAge(mes : Int, ano : Int, dia : Int) : Int{ //retorna o valor da idade do paciente
-        var age : Int = 0
-        if(mes <= hoje.get(Calendar.MONTH) && dia <= hoje.get(Calendar.DAY_OF_MONTH)){
-            age = hoje.get(Calendar.YEAR)  - ano
-            //meses = (age * 12) + (hoje.get(Calendar.MONTH) - mes)
-        }
-        else{
-            age = hoje.get(Calendar.YEAR)- ano
-            age -= 1
-            var extra = mes - hoje.get(Calendar.MONTH)
-            extra -= 12
-            //meses = (age * 12) + extra
-
-        }
+        var age : Int = getMeses(mes, ano, dia)
+        age /= 12
+        age = age.toInt()
         return age;
+    }
+
+    fun getMeses(mes : Int, ano : Int, dia : Int) : Int {
+        val anoAtual : Int = hoje.get(Calendar.YEAR)
+        val mesAtual : Int = hoje.get(Calendar.MONTH)
+        val diaAtual : Int = hoje.get(Calendar.DAY_OF_MONTH)
+
+        val anoEmMes = (anoAtual - ano) * 12
+        val meses = (mesAtual - mes)
+        var diaEmMes = diaAtual - dia
+
+        if ((diaEmMes < 0 && meses == 0) ||(diaEmMes < 0 && anoEmMes == 0)) {
+            diaEmMes = -1
+        } else {
+            diaEmMes = 0
+        }
+
+        return anoEmMes + meses + diaEmMes
+
     }
 
     fun getNome(){ //recebe o nome do paciente
@@ -76,12 +85,12 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
     }
 
     fun onContinuarPressed(view : View){ //chama a próxima tela (1 para PIM, 0 para PELOD)
-            if(meses == 0){
+            if(mesesPaciente < 0){
                 val msg = "Você não marcou a data de nascimento!"
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             }
             else {
-                startActivity(Intent(this, PELOD::class.java ).putExtra("mes", meses))
+                startActivity(Intent(this, PELOD::class.java ).putExtra("mes", mesesPaciente))
             }
 
 
