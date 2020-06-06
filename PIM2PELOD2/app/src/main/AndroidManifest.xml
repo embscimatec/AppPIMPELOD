@@ -21,7 +21,8 @@
         <activity
             android:name=".splash_calculando"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PELOD" />
+        <activity android:name=".PELOD"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PIM"
             android:label="@string/title_activity_p_i_m"
