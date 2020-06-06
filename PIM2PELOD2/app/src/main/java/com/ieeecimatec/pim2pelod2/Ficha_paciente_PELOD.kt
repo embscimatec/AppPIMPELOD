@@ -85,7 +85,7 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
     }
 
     fun onContinuarPressed(view : View){ //chama a próxima tela (1 para PIM, 0 para PELOD)
-            if(mesesPaciente < 0){
+        if(mesesPaciente < 0){
                 val msg = "Você não marcou a data de nascimento!"
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             }

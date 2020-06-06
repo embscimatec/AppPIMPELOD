@@ -89,7 +89,7 @@
             android:fontFamily="sans-serif-thin"
             android:textAlignment="center"
             android:textColor="@color/preto"
-            android:hint="(mmHg)/FiO2" />
+            android:hint="(mmHg)" />
 
             <TextView
                 android:id="@+id/question3"
