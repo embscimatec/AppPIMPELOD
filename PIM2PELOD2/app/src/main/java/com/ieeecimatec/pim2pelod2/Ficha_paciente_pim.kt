@@ -15,7 +15,7 @@ class Ficha_paciente_pim : AppCompatActivity() {
 
     var nome_paciente = ""
     var idade : Int = 0
-    var meses : Int = 0
+    var mesesPaciente : Int = 0
     val hoje = Calendar.getInstance() //recebe a data atual
     @RequiresApi(Build.VERSION_CODES.O)
     //recebe a data mínima (idade maxima)
@@ -34,9 +34,9 @@ class Ficha_paciente_pim : AppCompatActivity() {
             hoje.get(Calendar.DAY_OF_MONTH)
 
         ) { view, year, month, day ->
-            val month = month + 1
             idade = getAge(month, year, day)
-            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e tem ${meses} meses de vida."
+            mesesPaciente = getMeses(month, year, day)
+            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e tem ${mesesPaciente} meses totais de vida."
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
 
@@ -48,22 +48,30 @@ class Ficha_paciente_pim : AppCompatActivity() {
     }
 
     fun getAge(mes : Int, ano : Int, dia : Int) : Int{ //retorna o valor da idade do paciente
-        var age : Int = 0
-        if(mes <= hoje.get(Calendar.MONTH) && dia <= hoje.get(Calendar.DAY_OF_MONTH)){
-            age = hoje.get(Calendar.YEAR)  - ano
-            meses = (age * 12) + (hoje.get(Calendar.MONTH) - mes)
-        }
-        else{
-            age = hoje.get(Calendar.YEAR)- ano
-            age -= 1
-            var extra = mes - hoje.get(Calendar.MONTH)
-            extra -= 12
-            meses = (age * 12) + extra
-
-        }
-        return age;
+        var age : Int = getMeses(mes, ano, dia)
+        age /= 12
+        age = age.toInt()
+        return age
     }
 
+    fun getMeses(mes : Int, ano : Int, dia : Int) : Int {
+        val anoAtual : Int = hoje.get(Calendar.YEAR)
+        val mesAtual : Int = hoje.get(Calendar.MONTH)
+        val diaAtual : Int = hoje.get(Calendar.DAY_OF_MONTH)
+
+        val anoEmMes = (anoAtual - ano) * 12
+        val meses = (mesAtual - mes)
+        var diaEmMes = diaAtual - dia
+
+        if ((diaEmMes < 0 && meses == 0) ||(diaEmMes < 0 && anoEmMes == 0)) {
+            diaEmMes = -1
+        } else {
+            diaEmMes = 0
+        }
+
+        return anoEmMes + meses + diaEmMes
+
+    }
     fun getNome(){ //recebe o nome do paciente
         val editTxt = findViewById<EditText>(R.id.nomePaciente)
         nome_paciente = editTxt.text.toString()

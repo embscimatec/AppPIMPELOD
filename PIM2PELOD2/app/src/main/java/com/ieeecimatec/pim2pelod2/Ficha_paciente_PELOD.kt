@@ -38,7 +38,7 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
         ) { view, year, month, day ->
             idade = getAge(month, year, day)
             mesesPaciente = getMeses(month, year, day)
-            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e ${mesesPaciente} meses"
+            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e tem ${mesesPaciente} meses totais de vida."
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
 
@@ -53,7 +53,7 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
         var age : Int = getMeses(mes, ano, dia)
         age /= 12
         age = age.toInt()
-        return age;
+        return age
     }
 
     fun getMeses(mes : Int, ano : Int, dia : Int) : Int {
