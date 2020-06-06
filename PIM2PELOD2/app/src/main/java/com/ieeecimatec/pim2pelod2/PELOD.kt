@@ -100,7 +100,7 @@ class PELOD : AppCompatActivity() {
     }
 
     fun getEficiencia(){
-        eficiencia = (fio2/pao)*100
+        eficiencia = (pao/fio2)*100
         if (eficiencia >= 61) {
             eficienciaInt = 0
         }
