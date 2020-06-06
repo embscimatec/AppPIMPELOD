@@ -27,8 +27,9 @@ class PELOD : AppCompatActivity() {
     var globInt : Int = 1
     var plaqInt : Int = 1
     var pressao : Double = 0.0
-    var pressaoInt : Int = 0;
+    var pressaoInt : Int = 0
     //val meses : Int = intent.getSerializableExtra("meses") as Int
+    val meses : Int = 60
     var eficiencia : Double = 0.0
     var eficienciaInt : Int = 0
 
@@ -122,7 +123,7 @@ class PELOD : AppCompatActivity() {
         }
 
     }
-/*
+
     fun getCreatinina(){
         val editTxt = findViewById<EditText>(R.id.Creatina)
         val baseTxt = editTxt.text.toString()
@@ -247,9 +248,8 @@ class PELOD : AppCompatActivity() {
             }
         }
 
-
     }
-    */
+
 
     fun getPaCO2(){
         val editTxt = findViewById<EditText>(R.id.PaCO2)
@@ -311,8 +311,8 @@ class PELOD : AppCompatActivity() {
         // métodos que recebem valores dos EditTexts
         getGlasglow()
         getLacta()
-        //getPressao()
-        //getCreatinina()
+        getPressao()
+        getCreatinina()
         getPaO2()
         getFiO2()
         getEficiencia() //metodo que calcula FiO2/PaO2 (%)
