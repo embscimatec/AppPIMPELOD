@@ -28,14 +28,16 @@ class PELOD : AppCompatActivity() {
     var plaqInt : Int = 1
     var pressao : Double = 0.0
     var pressaoInt : Int = 0
-    //val meses : Int = intent.getSerializableExtra("meses") as Int
-    val meses : Int = 60
     var eficiencia : Double = 0.0
     var eficienciaInt : Int = 0
+    var meses : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pelod)
+
+    val mes = intent.getSerializableExtra("mes") as Int
+        meses = mes
 
         //radioButton da reação da pupila
         reacaoPupila.setOnCheckedChangeListener(

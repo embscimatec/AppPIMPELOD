@@ -38,7 +38,7 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
         ) { view, year, month, day ->
             val month = month + 1
             idade = getAge(month, year, day)
-            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e tem ${meses} meses de vida."
+            val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e ${meses} meses"
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
 
@@ -76,15 +76,12 @@ class Ficha_paciente_PELOD : AppCompatActivity() {
     }
 
     fun onContinuarPressed(view : View){ //chama a próxima tela (1 para PIM, 0 para PELOD)
-
             if(meses == 0){
                 val msg = "Você não marcou a data de nascimento!"
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             }
             else {
-                val intent = Intent (this, PELOD::class.java )
-                intent.putExtra("meses", meses)
-                startActivity(intent)
+                startActivity(Intent(this, PELOD::class.java ).putExtra("mes", meses))
             }
 
 
