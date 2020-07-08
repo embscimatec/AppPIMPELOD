@@ -1,5 +1,6 @@
 package com.ieeecimatec.pim2pelod2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -36,11 +37,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_profile -> {
+            R.id.nav_dados -> {
                 Toast.makeText(this, "Dados clicked", Toast.LENGTH_SHORT).show()
+
             }
-            R.id.nav_messages -> {
+            R.id.nav_calcular -> {
                 Toast.makeText(this, "Calcular clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Calcular::class.java)
+                startActivity(intent)
             }
 
         }
