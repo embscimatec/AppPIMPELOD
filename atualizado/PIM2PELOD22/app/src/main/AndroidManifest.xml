@@ -9,23 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Calcular"
+        <activity android:name=".Resultado"></activity>
+        <activity android:name=".splash_calculando" />
+        <activity android:name=".PELOD" />
+        <activity android:name=".PIM" />
+        <activity android:name=".ficha_paciente" />
+        <activity
+            android:name=".Calcular"
             android:label="Calcular"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".dados"
+        <activity
+            android:name=".dados"
             android:label="Dados calculados"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".splash_inicial"
             android:theme="@style/AppTheme.NoActionBar">
@@ -35,8 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- tela de carregamento -->
-
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
