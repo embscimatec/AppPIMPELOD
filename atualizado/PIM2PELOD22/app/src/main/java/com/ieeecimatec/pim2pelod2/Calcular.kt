@@ -13,13 +13,17 @@ class Calcular : AppCompatActivity() {
     }
 
     fun clickPIM (view : View){ //esse método nao está funcionando
-        //val intent = Intent (this, Ficha_paciente_pim::class.java )
+        val intent = Intent (this, ficha_paciente::class.java )
+        val escolha = "PIM"
+        intent.putExtra("escolha", escolha)
         //startActivity(intent)
     }
 
     fun clickPELOD (view : View){ //esse método nao está funcionando
-        //val intent = Intent (this, Ficha_paciente_PELOD::class.java )
-        //startActivity(intent)
+        val intent = Intent (this, ficha_paciente::class.java )
+        val escolha = "PIM"
+        intent.putExtra("escolha", escolha)
+        startActivity(intent)
     }
 
 
