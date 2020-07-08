@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azulEscuro"
+    android:orientation="vertical"
+    tools:context=".PELOD">
+
+    <ImageButton
+        android:layout_marginLeft="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonBack"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/icon_back"
+        android:onClick="onBackPressed"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="45dp"
+                android:text="@string/title_activity_p_e_l_o_d"
+                android:textSize="30pt"
+                android:fontFamily="sans-serif-thin"
+                android:textColor="@color/branco"/>
+
+            <TextView
+                android:id="@+id/question1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta1"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+
+            <EditText
+                android:id="@+id/Glasglow"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_margin="10dp"
+                android:bottom="@id/question1"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(Score)" />
+
+            <TextView
+                android:id="@+id/question2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pimpergunta2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <EditText
+                android:id="@+id/PaO2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(mmHg)" />
+
+            <TextView
+                android:id="@+id/question3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pimpergunta3"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+            <EditText
+                android:id="@+id/FiO2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question4"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="%" />
+
+            <TextView
+                android:id="@+id/question4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pimpergunta5"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <RadioGroup
+                android:id="@+id/reacaoPupila"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="radio1"
+                    android:text="@string/sim"
+                    android:shadowColor="@color/cinzaEscuro"
+                    android:textColor="@color/branco"
+                    android:textSize="10pt"
+                    android:fontFamily="sans-serif"
+                    android:buttonTint="@color/cinzaEscuro"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="50dp"
+                    android:id="@+id/Reacaosim" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="radio1"
+                    android:text="@string/nao"
+                    android:shadowColor="@color/cinzaEscuro"
+                    android:textColor="@color/branco"
+                    android:textSize="10pt"
+                    android:fontFamily="sans-serif"
+                    android:buttonTint="@color/cinzaEscuro"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/Reacaonao"
+                    />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/question5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta4"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <EditText
+                android:id="@+id/Lactatemia"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(m.mol/L)" />
+
+            <TextView
+                android:id="@+id/question6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta5"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <EditText
+                android:id="@+id/pressaoArt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(mmHg)" />
+
+            <TextView
+                android:id="@+id/question7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pimpergunta7"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <RadioGroup
+                android:id="@+id/ventilacaoMecanica"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="radio2"
+                    android:text="@string/sim"
+                    android:shadowColor="@color/cinzaEscuro"
+                    android:textColor="@color/branco"
+                    android:textSize="10pt"
+                    android:fontFamily="sans-serif"
+                    android:buttonTint="@color/cinzaEscuro"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="50dp"
+                    android:id="@+id/ventilacaosim"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="radio2"
+                    android:text="@string/nao"
+                    android:shadowColor="@color/cinzaEscuro"
+                    android:textColor="@color/branco"
+                    android:textSize="10pt"
+                    android:fontFamily="sans-serif"
+                    android:buttonTint="@color/cinzaEscuro"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/ventilacaonao"
+                    />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/question8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta7"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <EditText
+                android:id="@+id/Creatina"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(mg/dL)" />
+
+            <TextView
+                android:id="@+id/question9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta8"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+            <EditText
+                android:id="@+id/PaCO2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(mmHg)" />
+
+            <TextView
+                android:id="@+id/question10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta9"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+
+            <EditText
+                android:id="@+id/globulosBrancos"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="@string/hintGlobulosBrancos" />
+
+            <TextView
+                android:id="@+id/question11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/pelodpergunta10"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/branco" />
+
+            <EditText
+                android:id="@+id/Plaquetas"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/branco"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_margin="10dp"
+                android:bottom="@id/question2"
+                android:textSize="10pt"
+                android:fontFamily="sans-serif-thin"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:hint="(x 10ˆ9/L)" />
+
+
+            <Button
+                android:id="@+id/buttonCalcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clickCalcular"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Calcular"
+                android:textColor="@color/branco"
+                android:fontFamily="sans-serif"
+                android:textSize="14pt"
+                android:backgroundTint="@color/azulClaro"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
