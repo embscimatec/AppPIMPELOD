@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clickPIM (view : View){ //esse método nao está funcionando
         val intent = Intent (this, ficha_paciente::class.java )
-        val escolha = "PIM"
+        val escolha : String = "PIM"
         intent.putExtra("escolha", escolha)
         startActivity(intent)
     }

@@ -19,7 +19,7 @@ class ficha_paciente : AppCompatActivity() {
     val hoje = Calendar.getInstance() //recebe a data atual
     @RequiresApi(Build.VERSION_CODES.O)
     //recebe a data mínima (idade maxima)
-    val calculo = intent.getSerializableExtra("escolha")
+    val calculo : String = intent.getSerializableExtra("escolha") as String
 
     @RequiresApi(Build.VERSION_CODES.O)
     val miniDate : Calendar = Calendar.Builder().setDate(hoje.get(Calendar.YEAR) - 16, hoje.get(
