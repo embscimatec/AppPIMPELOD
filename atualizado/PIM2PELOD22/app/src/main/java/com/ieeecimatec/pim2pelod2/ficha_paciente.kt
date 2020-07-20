@@ -91,12 +91,12 @@ class ficha_paciente : AppCompatActivity() {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
         else {
-            if (calculo == "PIM"){
-
-            }
-            else{
+            //if (calculo == "PIM"){
+                startActivity(Intent(this, PIM::class.java ))
+            //}
+            /*else{
                 startActivity(Intent(this, PELOD::class.java ).putExtra("mes", mesesPaciente))
-            }
+            }*/
         }
 
     }
