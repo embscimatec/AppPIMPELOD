@@ -8,7 +8,8 @@
     android:layout_gravity="center_vertical"
     style="@style/AppTheme.NoActionBar"
     tools:context=".ui.gallery.GalleryFragment"
-    android:parentActivityName=".MainActivity">
+    android:parentActivityName=".MainActivity"
+    android:background="@color/azulEscuro">
 
     <!--<include
         layout="@layout/app_bar_teste"
@@ -24,40 +25,46 @@
         android:background="@drawable/seta_voltar"
         android:onClick="onBackPressed"
         /> -->
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Escolha o escore:"
+        android:textColor="@color/branco"
+        android:textSize="36sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_marginTop="250dp"
-        android:padding="100px">
+        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_tall_divider"
+        >
 
-    <Button
-        android:id="@+id/buttonPIM"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:onClick="clickPIM"
-        android:layout_marginLeft="40px"
-        android:background="@color/azulClaro"
-        android:text="PIM2"
-        android:textAlignment="center"
-        android:textColor="@color/branco"
-        android:textSize="20dp" />
+        <Button
+            android:id="@+id/buttonPIM"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:background="@color/azulClaro"
+            android:onClick="clickPIM"
+            android:text="PIM2"
+            android:textAlignment="center"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            android:layout_marginRight="50dp"/>
 
-    <Button
+        <Button
         android:id="@+id/buttonPELOD"
         android:onClick="clickPELOD"
         android:layout_width="120dp"
         android:layout_height="55dp"
-        android:layout_margin="100px"
         android:background="@color/azulClaro"
         android:left="@id/buttonPELOD"
         android:text="PELOD2"
         android:textAlignment="center"
         android:textColor="@color/branco"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     </LinearLayout>
 
