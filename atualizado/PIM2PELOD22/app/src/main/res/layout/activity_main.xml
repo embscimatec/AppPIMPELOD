@@ -25,9 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:text="@string/app_name"
+            android:text="Bem vindo ao PIM2PELOD2"
             android:textSize="13pt"
-            android:textColor="@color/preto"/>
+            android:textAlignment="center"
+            android:textColor="@color/azulEscuro"/>
         <TextView
             android:gravity="center_vertical"
             android:layout_marginTop="80dp"
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Escolha o score a ser calculado:"
-            android:textColor="@color/preto"
+            android:textColor="@color/azulEscuro"
             android:layout_centerHorizontal="true"
             />
 
@@ -45,7 +46,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
 
-            android:paddingLeft="100px">
+            android:paddingLeft="0px">
 
 
             <Button
