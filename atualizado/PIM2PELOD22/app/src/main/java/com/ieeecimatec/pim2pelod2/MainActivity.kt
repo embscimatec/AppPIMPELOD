@@ -28,16 +28,12 @@ class MainActivity : AppCompatActivity() {
 
 
     fun clickPIM (view : View){ //esse método nao está funcionando
-        val intent = Intent (this, ficha_paciente::class.java )
-        val escolha : String = "PIM"
-        intent.putExtra("escolha", escolha)
+        val intent = Intent (this, ficha_paciente_pim::class.java )
         startActivity(intent)
     }
 
     fun clickPELOD (view : View){ //esse método nao está funcionando
         val intent = Intent (this, ficha_paciente::class.java )
-        val escolha = "PELOD"
-        intent.putExtra("escolha", escolha)
         startActivity(intent)
     }
 

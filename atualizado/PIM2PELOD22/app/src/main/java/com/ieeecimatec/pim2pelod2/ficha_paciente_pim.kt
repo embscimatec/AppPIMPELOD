@@ -11,8 +11,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import java.util.*
 
-class ficha_paciente : AppCompatActivity() {
-
+class ficha_paciente_pim : AppCompatActivity() {
     var nome_paciente = ""
     var idade : Int = 0
     var mesesPaciente : Int = 0
@@ -26,7 +25,7 @@ class ficha_paciente : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ficha_paciente)
+        setContentView(R.layout.activity_ficha_paciente_pim)
         val date_Picker = findViewById<DatePicker>(R.id.datePicker)
         //date_Picker.setDatePickerFormat("DMY");
         date_Picker.maxDate = Calendar.getInstance().timeInMillis  //maior data possivel
@@ -38,7 +37,7 @@ class ficha_paciente : AppCompatActivity() {
             idade = getAge(month, year, day)
             mesesPaciente = getMeses(month, year, day)
         //    val msg = "Você Selecionou: $day/$month/$year. Você possui ${idade} anos e tem ${mesesPaciente} meses totais de vida."
-          //  Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        //    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
 
 
@@ -89,9 +88,9 @@ class ficha_paciente : AppCompatActivity() {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
         else {
-
-                startActivity(Intent(this, PELOD::class.java ).putExtra("mes", mesesPaciente))
+            startActivity(Intent(this, PIM::class.java ))
         }
 
     }
+
 }

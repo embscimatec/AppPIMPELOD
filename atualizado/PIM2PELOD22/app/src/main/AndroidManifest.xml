@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Resultado"></activity>
+        <activity android:name=".ficha_paciente_pim"></activity>
+        <activity android:name=".Resultado" />
         <activity android:name=".splash_calculando" />
         <activity android:name=".PELOD" />
         <activity android:name=".PIM" />
