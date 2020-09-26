@@ -6,73 +6,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:background="@color/azulEscuro"
+    >
 
-    <include
-        layout="@layout/content_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_info"
+         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:padding="20dp">
+        android:padding="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="90dp"
             android:text="Bem vindo ao PIM2PELOD2"
-            android:textSize="13pt"
+            android:textSize="18pt"
             android:textAlignment="center"
-            android:textColor="@color/azulEscuro"/>
+            android:textColor="@color/branco"/>
         <TextView
             android:gravity="center_vertical"
             android:layout_marginTop="80dp"
-            android:textSize="11pt"
+            android:textSize="14pt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:text="Escolha o score a ser calculado:"
-            android:textColor="@color/azulEscuro"
+            android:textColor="@color/branco"
             android:layout_centerHorizontal="true"
             />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-
-            android:paddingLeft="0px">
-
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="50dp"
+            android:paddingRight="20dp">
 
             <Button
                 android:id="@+id/buttonPIM"
-                android:layout_width="120dp"
-                android:layout_height="55dp"
-                android:onClick="clickPIM"
-                android:layout_marginLeft="40px"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:background="@color/azulClaro"
+                android:fontFamily="sans-serif"
+                android:onClick="clickPIM"
                 android:text="PIM2"
                 android:textAlignment="center"
                 android:textColor="@color/branco"
-                android:textSize="20dp" />
+                android:textSize="30dp" />
 
             <Button
                 android:id="@+id/buttonPELOD"
-                android:onClick="clickPELOD"
-                android:layout_width="120dp"
-                android:layout_height="55dp"
-                android:layout_margin="100px"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
                 android:background="@color/azulClaro"
+                android:fontFamily="sans-serif"
                 android:left="@id/buttonPELOD"
+                android:onClick="clickPELOD"
                 android:text="PELOD2"
                 android:textAlignment="center"
                 android:textColor="@color/branco"
-                android:textSize="20dp" />
+                android:textSize="30dp" />
 
         </LinearLayout>
 

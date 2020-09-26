@@ -203,17 +203,18 @@ class PIM : AppCompatActivity() {
         }
         else{
 
-            val resultado = Resultado()
+            var resultado = Resultado()
             val resultadoStr = resultado.toString()
 
-            txtResultado.text = "A probabilidade de morte é ${resultadoStr}"
-
+            txtResultado.text = "A probabilidade de morte é de ${resultadoStr}"
+           // resultado = txtResultado.toString()
             //Toast.makeText(applicationContext, "${resultadoStr} e ${resultado}",
             // Toast.LENGTH_SHORT).show()
 
 
             val intent = Intent(this, splash_calculando::class.java)
             intent.putExtra("resultado", resultado)
+            intent.putExtra(txtResultado)
 
             //passando o valor do resultado para a outra página
             startActivity(intent)
