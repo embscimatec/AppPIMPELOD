@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/azulClaro</item>
+        <item name="colorPrimaryDark">@color/azulEscuro</item>
+        <item name="colorAccent">@color/branco</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--<style name="CustomActivityTheme" parent="AppTheme">
+        <item name="android:homeAsUpIndicator">@drawable/botaoback</item>
+        <item name="android:actionButtonStyle">@drawable/actionbuttonwhite</item>
+    </style>  -->
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
